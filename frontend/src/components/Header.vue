@@ -1,25 +1,40 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand navbar-collapse">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <nav class="navbar navbar-expand-sm bg-warning">
+           
                 <div class="navbar-brand" href="/">
                     <a href="/">Esküvő
                     </a>
                 </div>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <router-link to="/information" class="nav-link">Információk</router-link>
+                <button class="navbar-toggler" type="button" data-trigger="#main_nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse" id="main_nav">
+                    <div class="offcanvas-header mt-3">  
+                        <button class="btn btn-outline-danger btn-close float-right"></button>
+                        <h5 class="py-2 text-white">Main navbar</h5>
+                    </div>
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <router-link to="/information" class="nav-link">Bemutatkozás</router-link>
                     </li>
-                    <li class="nav-item active">
-                        <router-link to="/galery" class="nav-link">Galéria</router-link>
+                    <li class="nav-item">
+                        <router-link to="/galery" class="nav-link">Visszajelzés</router-link>
                     </li>
-                    <li class="nav-item active">
-                        <router-link to="/registration" class="nav-link">Regisztráció</router-link>
+                    <li class="nav-item">
+                        <router-link to="/registration" class="nav-link">Az esküvőről</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/registration" class="nav-link">Galéria</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/registration" class="nav-link">Kapcsolat</router-link>
                     </li>
 
                 </ul>
+                </div>
+                
 
-            </div>
         </nav>
         <br>
         <main role="main">
@@ -36,7 +51,7 @@
 </script>
 
 <style scoped>
-    .navbar {
-        background: transparent;
-    }
+.navbar-nav{
+    margin-left: auto;
+}
 </style>
