@@ -1,8 +1,8 @@
 <template>
-    <div>
+  <div class="containe-fluid">
   <b-navbar toggleable="lg" fixed="top" class="menu">
-    <b-navbar-brand router-link to="/intro">
-        <img src="logo.png" class="d-inline-block align-top" width="40e" alt="Esküvő">    
+    <b-navbar-brand router-link to="/">
+        <img src="..//assets/logo.png" class="d-inline-block align-top" width="40e" alt="Esküvő">    
         Esküvő
     </b-navbar-brand>
 
