@@ -3,7 +3,7 @@
   <b-navbar toggleable="lg" fixed="top" class="menu">
     <b-navbar-brand router-link to="/">
         <img src="..//assets/logo.png" class="d-inline-block align-top" width="40e" alt="Esküvő">    
-        Esküvő
+        <span class="h4 m-3">Esküvő</span>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -14,11 +14,11 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-        <b-nav-item class="linkItem" router-link to="/intro">Bemutatkozás </b-nav-item>
-        <b-nav-item class="linkItem" router-link to="/rspv">Visszajelzés </b-nav-item>
-        <b-nav-item class="linkItem" router-link to="/wedding">Az esküvőről </b-nav-item>
-        <b-nav-item class="linkItem" router-link to="/gallery">Galéria </b-nav-item>
-        <b-nav-item class="linkItem" router-link to="/contact">Kapcsolat </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/intro">Bemutatkozás </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/rspv">Visszajelzés </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/wedding">Az esküvőről </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/gallery">Galéria </b-nav-item>
+        <b-nav-item class="linkItem h5 " router-link to="/contact">Kapcsolat </b-nav-item>
       </b-navbar-nav>
 
         
@@ -49,5 +49,13 @@
 }
 .linkItem{
     color:#000
+}
+@media (max-width: 1081px){
+  .linkItem{
+    padding-right: 40vw
+  }
+}
+.centered{
+ text-align: center;
 }
 </style>
