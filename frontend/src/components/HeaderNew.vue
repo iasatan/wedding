@@ -17,7 +17,7 @@
         <b-nav-item class="linkItem h5" router-link to="/intro">Bemutatkozás </b-nav-item>
         <b-nav-item class="linkItem h5" router-link to="/rspv">Visszajelzés </b-nav-item>
         <b-nav-item class="linkItem h5" router-link to="/about">Az esküvőről </b-nav-item>
-        <b-nav-item class="linkItem h5" router-link to="/gallery">Galéria </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/galery">Galéria </b-nav-item>
         <b-nav-item class="linkItem h5 " router-link to="/contact">Kapcsolat </b-nav-item>
       </b-navbar-nav>
 
@@ -30,11 +30,16 @@
             <router-view>
             </router-view>
         </main>
+        <div class="padding"></div>
+        <h1>Visszaszámlálás</h1>
+        <countdown deadline="2021-09-04 15:00:00" ></countdown>
     </div>
 </template>
 
 <script>
+import countdown from './Countdown.vue'
     export default {
+  components: { countdown },
         name: "HeaderNew"
     }
 </script>
@@ -57,5 +62,8 @@
 }
 .centered{
  text-align: center;
+}
+.padding{
+  margin-top: 20em;
 }
 </style>
