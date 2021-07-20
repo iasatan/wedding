@@ -15,7 +15,7 @@
         min-height: 100vh;
         max-width: 100%;
         background-image: url('/background2.jpg');
-        background-size: 50%;
+        background-size: 60%;
         background-repeat: repeat;
     }
 </style>

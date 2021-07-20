@@ -16,7 +16,7 @@
         <b-navbar-nav>
         <b-nav-item class="linkItem h5" router-link to="/intro">Bemutatkozás </b-nav-item>
         <b-nav-item class="linkItem h5" router-link to="/rspv">Visszajelzés </b-nav-item>
-        <b-nav-item class="linkItem h5" router-link to="/wedding">Az esküvőről </b-nav-item>
+        <b-nav-item class="linkItem h5" router-link to="/about">Az esküvőről </b-nav-item>
         <b-nav-item class="linkItem h5" router-link to="/gallery">Galéria </b-nav-item>
         <b-nav-item class="linkItem h5 " router-link to="/contact">Kapcsolat </b-nav-item>
       </b-navbar-nav>
