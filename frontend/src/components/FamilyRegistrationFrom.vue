@@ -1,47 +1,38 @@
 <template>
   <div class="container-fluid">
     <form @submit="register">
-        <h4>{{attendee.name}}</h4>
-        <div class="row my-padding">
-        <h4>Ételérzékenység/életmód:</h4>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input class="form-check-input" v-model="attendee.lactose" type="checkbox" id="laktozeCheck">
-                        <span>Laktózérzékenység</span>
-                    </div>
+        <h2>{{attendee.name}}</h2>
+        <AllergyForm :attendee="attendee" class="my-padding"/>
+        <div class="m-2 h4 font-weight-bold" v-if="attendees.length<1">
+            <br>
+            <i style="margin-left:0.7em;" @click="add()">+1 Fő hozzáadása</i>
+        </div>
+        <div v-for="(attendee,k) in attendees" :key="k">
+            <div class="row">
+                <div class="form-group my-padding col-6">
+                    <label class="col-form-label" for="name">Név </label>
+                        <input type="text" v-model="attendee.name" class="form-control" id="name"  placeholder="Jóska Pistike">
                 </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.milk" id="milkCheck">
-                        <span>Tej allergia</span>
-                    </div>
+                <div class="form-group my-padding col-3">
+                    <label class="col-form-label" for="name">Kor </label>
+                        <input type="number" v-model="attendee.age" class="form-control" id="age">
                 </div>
-                
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.gluten" id="glutenCheck">
-                        <span>Glutén allergia</span>
-                    </div>
+                <div class="col-1 form-group my-padding">
+                    <button type="button" class="btn btn-danger " @click="remove(k)">X</button>
+                    <i @click="remove(k)" class="bi bi-trash"></i>
                 </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.vegan" id="VeganCheck">
-                        <span>Vegán</span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.sugar" id="SugarCheck">
-                        <span>Cukor</span>
-                    </div>
-                </div>
+            </div>
+            <AllergyForm :attendee="attendee"/>
+            <div class="m-2 h4 font-weight-bold">
+                <br>
+
+                <i style="margin-left:0.7em;" @click="add(k)"
+                   v-show="k == attendees.length-1">+1 Fő hozzáadása</i>
+            </div>
+
         </div>
 
 
-        <div class="form-group">
-            <span>Egyéb</span>
-                           <input type="text" class="form-control my_label" id="othreCheck" placeholder="Egyéb" v-model="attendee.other">
-        </div>
         <h4 class="my-padding">Részvétel:</h4>
         <fieldset class="form-group">
             <div class="row">
@@ -49,34 +40,65 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="ChurchRadioButton"
                                value="templom" v-model="attendee.attend">
-                        <label class="form-check-label" for="ChurchRadio">Csak Szertartás</label>
+                        <label class="form-check-label" for="ChurchRadioButton">Csak Szertartás</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="PartyRadioButton"
                                value="minden" checked v-model="attendee.attend">
-                        <label class="form-check-label" for="PartyRegio">Lakodalom és szertartás</label>
+                        <label class="form-check-label" for="PartyRadioButton">Lakodalom és szertartás</label>
                     </div>
                      <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="NothingRadioButton"
                                value="semmi" v-model="attendee.attend">
-                        <label class="form-check-label" for="PartyRegio">Nem tudok résztvenni</label>
+                        <label class="form-check-label" for="NothingRadioButton">Nem tudok résztvenni</label>
                     </div>
                 </div>
             </div>
         </fieldset>
         <div class="align-right">
-            <button type="submit" class="btn btn-light">Regisztráció</button>
+            <button type="submit" class="btn btn-light">Küldés</button>
         </div>
         </form>
     </div>
 </template>
 
 <script>
+    import AllergyForm from "./AllergyFrom";
     export default {
         name: "FamilyRegistrationFrom",
+        components: {AllergyForm},
         props: {
-            attendee: {required: true}
+            attendee: {required: true},
+            attendees:{required: true}
 
+        },
+        created: function(){
+            console.log(this.attendees)
+        },
+        methods: {
+            async register(e) {
+                e.preventDefault();
+                this.$emit("submitted",this.attendee);
+            },
+            add(){
+                this.attendees.push({
+                    name: "Személy",
+                    email:"",
+                    age: null,
+                    lactose: false,
+                    milk: false,
+                    gluten: false,
+                    vegan: false,
+                    other: "",
+                    attend: "minden",
+                    canBring:false
+                });
+            },
+            remove(index) {
+                if (confirm("Biztosan törli a személyt?")) {
+                    this.attendees.splice(index, 1);
+                }
+            },
         }
     }
 </script>

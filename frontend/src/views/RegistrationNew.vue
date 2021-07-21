@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="text text-left">
-            <h2 >Visszajelzés</h2>
+            <h2 >Visszajelzés!</h2>
             <div class="my-padding row">
                 <div class="col-6">
                     <div v-if="firstPage">
@@ -9,7 +9,7 @@
                     </div>
                     <div v-else>
                         <div v-if="canBring">
-                            <FamilyRegistrationFrom :attendee="attendee" v-on:submitted="register()"/>
+                            <FamilyRegistrationFrom :attendee="attendee" :attendees="attendees" v-on:submitted="register()"/>
                         </div>
                         <div v-else>
                              <SingleRegistrationFrom :attendee="attendee" v-on:submitted="register()"/>
@@ -32,6 +32,7 @@ import contactBase from "../components/ContactBase.vue"
 import BaseRegistrationForm from "../components/BaseRegistrationForm.vue"
 import SingleRegistrationFrom from "../components/SingleRegistrationFrom.vue"
 import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
+import axios from "axios"
     export default {
         name: "Registration",
         components:{
@@ -42,6 +43,7 @@ import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
             },
         data() {
             return {
+                attendees:[],
                 attendee: {
                     name: "",
                     email:"",
@@ -52,7 +54,6 @@ import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
                     vegan: false,
                     other: "",
                     attend: "minden",
-                    canBring:false
                 },
                 firstPage:true,
                 canBring:true
@@ -65,22 +66,54 @@ import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
             async nextpage() {
                 console.log("I was called");
                 console.log(this.attendee);
-                this.firstPage=false;
-                this.$forceUpdate();
-                if(this.attendee.canBring){
-                    console.log(this.attendee.canBring)
+                if(this.attendee.name && this.attendee.email){
+                    if(this.attendee.name.toLowerCase().replace(/\s/g, "")==="asd"){
+                        this.canBring=false;
+                    }else{
+                        this.canBring=true;
+                    }
+                    if(this.canBring){
+                        console.log("attendee added to attendees" );
+                    }
+                    this.firstPage=false;
+
+                    this.$forceUpdate();
+
                 }
+
             },
             async register(){
-                console.log(this.attendee);
+                console.log("register method called");
+                axios.post('/api/attendee', this.attendee).then(async (res) => {
+                    console.log(res.data.id);
+                    let parentId = res.data.id;
+                    let success = true;
+                    if (this.canBring || this.attendees.length > 0) {
+                        for (let i = 1; i < this.attendees.length; i++) {
+                            this.attendees[i].parentId = parentId;
+                            let result = await axios.post('/api/attendee', this.attendees[i]);
+                            console.log(await result);
+                            if(!result){
+                                success=false;
+                            }
+                        }
+                        console.log(success);
+                        let toast = this.$toasted.show("Sikeres Regisztráció");
+                        toast.goAway(3000);
+                    } else {
+                        let toast = this.$toasted.show("Sikeres Regisztráció");
+                        toast.goAway(3000);
+                    }
+                }).catch(err => console.log(err));
+
+
+                }
             }
-        }
     }
 </script>
 
 <style scoped>
 .container{
-    max-width: 50em;;
     margin-top: 5em;
 }
 .text-left{

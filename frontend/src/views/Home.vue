@@ -25,6 +25,7 @@ img{
   width: 100%;
   top: -30px;
   position: relative;
+
 }
 .container-fluid{
   max-width: 100%;

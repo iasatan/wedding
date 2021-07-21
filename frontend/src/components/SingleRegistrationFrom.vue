@@ -2,7 +2,8 @@
     <div class="container-fluid">
     <form @submit="register">
         <div class="row">
-        <h4>Ételérzékenység/életmód:</h4>
+        <h2>{{attendee.name}}</h2>
+        <h4 class="my-padding">Ételérzékenység/életmód:</h4>
                 <div class="form-group row">
                     <div class="form-check">
                         <input class="form-check-input" v-model="attendee.lactose" type="checkbox" id="laktozeCheck">
@@ -48,17 +49,17 @@
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="ChurchRadioButton"
                                value="templom" v-model="attendee.attend">
-                        <label class="form-check-label" for="ChurchRadio">Csak Szertartás</label>
+                        <label class="form-check-label" for="ChurchRadioButton">Csak Szertartás</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="PartyRadioButton"
                                value="minden" checked v-model="attendee.attend">
-                        <label class="form-check-label" for="PartyRegio">Lakodalom és szertartás</label>
+                        <label class="form-check-label" for="PartyRadioButton">Lakodalom és szertartás</label>
                     </div>
                      <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="NothingRadioButton"
                                value="semmi" v-model="attendee.attend">
-                        <label class="form-check-label" for="PartyRegio">Nem tudok résztvenni</label>
+                        <label class="form-check-label" for="NothingRadioButton">Nem tudok résztvenni</label>
                     </div>
                 </div>
             </div>
@@ -80,7 +81,7 @@
         methods: {
             async register(e) {
                 e.preventDefault();
-                //this.$emit("submitted",this.attendee);
+                this.$emit("submitted",this.attendee);
             }
         }
     }

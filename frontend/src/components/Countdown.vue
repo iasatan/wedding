@@ -2,11 +2,8 @@
   <div class="container flip-clock">
     <template v-for="data in timeData" v-show="show">
       <span v-bind:key="data.label" class="flip-clock__piece" :id="data.elementId" v-show="data.show">
-        <span class="flip-clock__card flip-card">
+        <span class="flip-clock__card flip-card my_card">
           <b class="flip-card__top">{{ data.current | twoDigits }}</b>
-          <b class="flip-card__bottom" v-bind:data-value="data.current | twoDigits"></b>
-          <b class="flip-card__back" v-bind:data-value="data.previous | twoDigits"></b>
-          <b class="flip-card__back-bottom" v-bind:data-value="data.previous | twoDigits"></b>
         </span>
         <span class="flip-clock__slot">{{ data.label }}</span>
       </span>
@@ -233,15 +230,14 @@ export default {
   text-align: center;
   perspective: 600px;
   margin: 0 auto;
+
 }
 
 .flip-clock__piece {
   display: inline-block;
   margin: 0 0.2vw;
 
-  @media (min-width: 1000px) {
-    margin: 0 5px;
-  }
+
 }
 
 .flip-clock__slot {
@@ -250,13 +246,15 @@ export default {
   display: block;
 }
 
+.my_card{
+  border: 1px solid #96989a;
+  border-radius: 0.15em;
+}
 
 .flip-card {
   display: block;
   position: relative;
-  padding-bottom: 0.72em;
   font-size: 2.25rem;
-  line-height: 0.95;
 }
 
 @media (min-width: 1000px) {
@@ -268,140 +266,12 @@ export default {
   }
 }
 
-.flip-card__top,
-.flip-card__bottom,
-.flip-card__back-bottom,
-.flip-card__back::before,
-.flip-card__back::after {
+.flip-card__top{
   display: block;
-  height: 0.72em;
-  color: lightblue;
-  background: #222;
-  padding: 0.23em 0.15em 0.4em;
-  border-radius: 0.15em 0.15em 0 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-  width: 2.1em;
-  height: 0.72em;
-}
-
-.flip-card__top-4digits,
-.flip-card__bottom-4digits,
-.flip-card__back-bottom-4digits,
-.flip-card__back-4digits::before,
-.flip-card__back-4digits::after {
-  display: block;
-  height: 0.72em;
-  color: lightblue;
-  background: #222;
-  padding: 0.23em 0.15em 0.4em;
-  border-radius: 0.15em 0.15em 0 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-  width: 2.65em;
-  height: 0.72em;
-}
-
-.flip-card__bottom,
-.flip-card__back-bottom,
-.flip-card__bottom-4digits,
-.flip-card__back-bottom-4digits {
-  color: lightblue;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  border-top: solid 1px #000;
-  background: #393939;
-  border-radius: 0 0 0.15em 0.15em;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.flip-card__back-bottom,
-.flip-card__back-bottom-4digits {
-  z-index: 1;
-}
-
-.flip-card__bottom::after,
-.flip-card__back-bottom::after,
-.flip-card__bottom-4digits::after,
-.flip-card__back-bottom-4digits::after {
-  display: block;
-  margin-top: -0.72em;
-}
-
-.flip-card__back::before,
-.flip-card__bottom::after,
-.flip-card__back-bottom::after,
-.flip-card__back-4digits::before,
-.flip-card__bottom-4digits::after,
-.flip-card__back-bottom-4digits::after {
-  content: attr(data-value);
-}
-
-.flip-card__back,
-.flip-card__back-4digits {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  left: 0%;
-  pointer-events: none;
-}
-
-.flip-card__back::before,
-.flip-card__back-4digits::before {
-  position: relative;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.flip .flip-card__back::before,
-.flip .flip-card__back-4digits::before {
-  z-index: 1;
-  animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
-  animation-fill-mode: both;
-  transform-origin: center bottom;
-}
-
-.flip .flip-card__bottom,
-.flip .flip-card__bottom-4digits {
-  transform-origin: center top;
-  animation-fill-mode: both;
-  animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
-}
-
-@keyframes flipTop {
-  0% {
-    transform: rotateX(0deg);
-    z-index: 2;
-  }
-  0%,
-  99% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(-90deg);
-    opacity: 0;
-  }
-}
-
-@keyframes flipBottom {
-  0%,
-  50% {
-    z-index: -1;
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-  51% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: rotateX(0deg);
-    z-index: 5;
-  }
+  color: #fff;
+  background: rgba(216, 214, 223, 0.73);
+  border-radius: 0.15em;
+  width: 2.2em;
+  height: 1.3em;
 }
 </style>
