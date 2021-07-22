@@ -57,13 +57,17 @@ import countdown from './Countdown.vue'
 }
 @media (max-width: 1081px){
   .linkItem{
-    padding-right: 40vw
+    padding-right: 35vw
   }
+  .menu
+{
+  background-color:rgba(200, 200, 200, 1);
+}
 }
 .centered{
  text-align: center;
 }
 .padding{
-  margin-top: 20em;
+  margin-top: 10em;
 }
 </style>

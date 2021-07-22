@@ -3,7 +3,7 @@
         <div class="text text-left">
             <h2 >Visszajelzés!</h2>
             <div class="my-padding row">
-                <div class="col-6">
+                <div class="col-lg">
                     <div v-if="firstPage">
                         <BaseRegistrationForm :attendee="attendee" v-on:submitted="nextpage()" />
                     </div>
@@ -16,15 +16,13 @@
                         </div>  
                     </div>
                 </div>
-                <div class="offset-1 col-5 my_border">
+                <div class="col my_border">
                     <h3>Óhaj Sóhaj, észrevétel:</h3>
                     <contactBase/>
                 </div>
             </div>
         </div>
     </div>
-
-
 </template>
 
 <script>
@@ -120,13 +118,7 @@ import axios from "axios"
     text-align:left;
 }
 .my-padding{
-    margin-top:5em;
-}
-.align-left{
-    margin-left:20em
-}
-.btn{
-    border:solid 1px lightgray
+    margin-top:2em;
 }
 .my_border{
     border: solid 2px black;
