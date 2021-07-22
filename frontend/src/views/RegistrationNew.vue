@@ -88,7 +88,7 @@ import axios from "axios"
                     let parentId = res.data.id;
                     let success = true;
                     if (this.canBring || this.attendees.length > 0) {
-                        for (let i = 1; i < this.attendees.length; i++) {
+                        for (let i = 0; i < this.attendees.length; i++) {
                             this.attendees[i].parentId = parentId;
                             let result = await axios.post('/api/attendee', this.attendees[i]);
                             console.log(await result);

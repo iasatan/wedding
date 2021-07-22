@@ -81,7 +81,7 @@
             },
             add(){
                 this.attendees.push({
-                    name: "Személy",
+                    name: "",
                     email:"",
                     age: null,
                     lactose: false,
