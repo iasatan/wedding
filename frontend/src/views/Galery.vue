@@ -18,8 +18,10 @@ export default {
 }
 </script>
 <style scoped>
+@media (min-width: 1079px){
 .container{
   padding-top: 5em;
+}
 }
 img{
   max-width: 50em;

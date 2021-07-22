@@ -25,9 +25,12 @@
 .text-left{
     text-align:left;
 }
+@media (min-width: 1079px){
 .container{
     padding-top:5em;
 }
+}
+
 #birthImage{
     width: 10em;
 }

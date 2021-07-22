@@ -50,7 +50,6 @@ export default {
 }
 .container{
     max-width: 50em;;
-    margin-top: 5em;
     text-align: left;
 }
 .my-padding{

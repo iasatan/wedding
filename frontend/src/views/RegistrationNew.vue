@@ -112,24 +112,24 @@ import axios from "axios"
 </script>
 
 <style scoped>
+.my-padding{
+    margin-top:2em;
+}
 @media (min-width: 1079px){
     .container{
         margin-top: 5em;
         width:80em;
     }
+    .my-padding{
+    margin-top:1em;
 }
-@media (max-width: 1079px){
-    .container{
-        margin-top: 5em;
-    }
 }
+
 
 .text-left{
     text-align:left;
 }
-.my-padding{
-    margin-top:2em;
-}
+
 .my_border{
     border: solid 2px black;
     background-color:rgba(250,250,250,0.7);

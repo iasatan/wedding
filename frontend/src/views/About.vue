@@ -65,8 +65,10 @@ export default {
 .centered{
   text-align:center;
 }
+@media (min-width: 1079px){
 .container{
   padding-top: 5em;
+}
 }
 .row{
   text-align: left;

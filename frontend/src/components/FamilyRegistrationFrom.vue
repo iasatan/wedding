@@ -5,7 +5,7 @@
         <AllergyForm :attendee="attendee" class="my-padding"/>
         <div class="m-2 h4 font-weight-bold" v-if="attendees.length<1">
             <br>
-            <i style="margin-left:0.7em;" @click="add()">+1 Fő hozzáadása</i>
+            <button type="button" class="btn btn-warning " @click="add(k)">+1 Fő hozzáadása</button>
         </div>
         <div v-for="(attendee,k) in attendees" :key="k">
             <div class="row">
@@ -19,15 +19,12 @@
                 </div>
                 <div class="col-1 form-group my-padding">
                     <button type="button" class="btn btn-danger " @click="remove(k)">X</button>
-                    <i @click="remove(k)" class="bi bi-trash"></i>
                 </div>
             </div>
             <AllergyForm :attendee="attendee"/>
             <div class="m-2 h4 font-weight-bold">
                 <br>
-
-                <i style="margin-left:0.7em;" @click="add(k)"
-                   v-show="k == attendees.length-1">+1 Fő hozzáadása</i>
+                <button type="button" class="btn btn-warning " @click="add(k)" v-show="k == attendees.length-1">+1 Fő hozzáadása</button>
             </div>
 
         </div>
