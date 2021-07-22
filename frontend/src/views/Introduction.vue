@@ -1,7 +1,8 @@
 <template>
     <div>
+    <img src="../assets/powerpoint1.png"/>
         <div class="vl-sm-rl"></div>
-        <div class="container-fluid m-2" id="timeline">
+        <div class="container" id="timeline">
             <div class="row">
                 <div class="col-4"><h2>menyasszony</h2></div>
                 <div class="col-4"></div> 
@@ -11,10 +12,10 @@
 <br>
 <br>
             <div class="row">
-                <div class="col-4"></div> 
-                <div class="col-2"><h4>1997.01.27</h4></div>
-                <div class="col-2"><h4>1996.01.05</h4></div>
-                <div class="col-4"></div> 
+                <div class="col-lg"></div> 
+                <div class="col-sm"><h4>1997.01.27</h4></div>
+                <div class="col-sm"><h4>1996.01.05</h4></div>
+                <div class="col-lg"></div> 
             </div>
             <br>
           
@@ -29,10 +30,10 @@
 <br>
             <div class="vl-lg"></div>
             <div class="row">
-                <img class="col-4" src="../assets/szonjaIskola.jpg">    
-                <div class="col-2 schoolLabel"><h4>2003</h4></div>
-                <div class="col-2 schoolLabel2"><h4>2002</h4></div>
-                <img class="col-4" src="../assets/adamIskola.jpg"> 
+                <img class="col-lg" src="../assets/szonjaIskola.jpg">    
+                <div class="col-sm schoolLabel"><h4>2003</h4></div>
+                <div class="col-sm schoolLabel2"><h4>2002</h4></div>
+                <img class="col-lg" src="../assets/adamIskola.jpg"> 
             </div>
             <br>
             <h3>Születési időnkből adódóan az iskolát is egy év különbséggel kezdtük el. Ekkor a helyszín még nem stimmelt, de már nagyon igyekeztem drága vőlegényem nyomdokaiba lépni.
@@ -68,8 +69,8 @@
     position: absolute;
     left: 50%;
 }
-#timeline{
-    padding-top: 5em;
+.container{
+    padding-top:5em;
 }
 #birthImage{
     width: 10em;

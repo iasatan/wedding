@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Registration from '../views/RegistrationNew'
-import Introduction from '../views/Introduction.vue'
+import Introduction from '../views/IntroductionNew.vue'
 import Galery from '../views/Galery.vue'
 import Contact from '../views/Contact.vue'
 
