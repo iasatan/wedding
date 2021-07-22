@@ -55,7 +55,7 @@ export default {
 </script>
 <style scoped>
 .timeline{
-  width:100%;
+  width:70%;
   @media (max-width: 1081px){
   margin-left:10em;
   width:80%;

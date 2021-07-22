@@ -1,51 +1,14 @@
 <template>
-    <div class="container-fluid">
+    <div class="container">
     <form @submit="register">
         <div class="row">
-        <h2>{{attendee.name}}</h2>
-        <h4 class="my-padding">Ételérzékenység/életmód:</h4>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input class="form-check-input" v-model="attendee.lactose" type="checkbox" id="laktozeCheck">
-                        <span>Laktózérzékenység</span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.milk" id="milkCheck">
-                        <span>Tej allergia</span>
-                    </div>
-                </div>
-                
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.gluten" id="glutenCheck">
-                        <span>Glutén allergia</span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.vegan" id="VeganCheck">
-                        <span>Vegán</span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="attendee.sugar" id="SugarCheck">
-                        <span>Cukor</span>
-                    </div>
-                </div>
-        </div>
-
-
-        <div class="form-group">
-            <span>Egyéb</span>
-                           <input type="text" class="form-control my_label" id="othreCheck" placeholder="Egyéb" v-model="attendee.other">
+            <h2>{{attendee.name}}</h2>
+            <AllergyForm :attendee="attendee" class="my-padding"/>
         </div>
         <h4 class="my-padding">Részvétel:</h4>
         <fieldset class="form-group">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-10 col-lg-10">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="ChurchRadio" id="ChurchRadioButton"
                                value="templom" v-model="attendee.attend">
@@ -64,16 +27,20 @@
                 </div>
             </div>
         </fieldset>
-        <div class="align-right">
-            <button type="submit" class="btn btn-light">Regisztráció</button>
+        <div class="row">
+            <div class="align-right col-lg-3 col-sm-12 bottom_padding">
+                <button type="submit" class="btn btn-light">Küldés</button>
+            </div>
         </div>
         </form>
     </div>
 </template>
 
 <script>
+import AllergyForm from "./AllergyFrom";
     export default {
         name: "SingleRegistrationFrom",
+        components: {AllergyForm},
         props: {
             attendee: {required: true}
 
@@ -89,8 +56,7 @@
 
 <style scoped>
     .container-fluid {
-        width: 50em;
-        max-width: 100vh;
+        max-width: 50em;
         min-width: 500px;
     }
     .my_label{
@@ -101,6 +67,10 @@
 }
 .align-right{
    text-align:right;
+}
+.bottom_padding{
+    padding-top:1em;
+    padding-bottom:3em;
 }
 .btn{
     border:solid 1px lightgray

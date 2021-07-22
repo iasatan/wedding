@@ -56,8 +56,8 @@ import countdown from './Countdown.vue'
     color:rgba(0,0,0,0.55);
 }
 @media (max-width: 1081px){
-  .linkItem{
-    padding-right: 35vw
+  .navbar-nav{
+    margin:auto;
   }
   .menu
 {

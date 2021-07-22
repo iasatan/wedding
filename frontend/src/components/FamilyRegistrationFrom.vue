@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <form @submit="register">
         <h2>{{attendee.name}}</h2>
         <AllergyForm :attendee="attendee" class="my-padding"/>
@@ -55,8 +55,10 @@
                 </div>
             </div>
         </fieldset>
-        <div class="align-right">
-            <button type="submit" class="btn btn-light">Küldés</button>
+         <div class="row">
+            <div class="align-right col-lg-3 col-sm-12 bottom_padding">
+                <button type="submit" class="btn btn-light">Küldés</button>
+            </div>
         </div>
         </form>
     </div>
@@ -105,8 +107,7 @@
 
 <style scoped>
     .container-fluid {
-        width: 50em;
-        max-width: 100vh;
+        max-width: 50em;
         min-width: 500px;
     }
         .my_label{
@@ -120,5 +121,9 @@
 }
 .btn{
     border:solid 1px lightgray
+}
+.bottom_padding{
+    padding-top:1em;
+    padding-bottom:3em;
 }
 </style>

@@ -3,7 +3,7 @@
         <div class="text text-left">
             <h2 >Visszajelzés!</h2>
             <div class="my-padding row">
-                <div class="col-lg">
+                <div class="col-lg-6">
                     <div v-if="firstPage">
                         <BaseRegistrationForm :attendee="attendee" v-on:submitted="nextpage()" />
                     </div>
@@ -16,7 +16,8 @@
                         </div>  
                     </div>
                 </div>
-                <div class="col my_border">
+                <div class="col-lg-4 my_border">
+                <br>
                     <h3>Óhaj Sóhaj, észrevétel:</h3>
                     <contactBase/>
                 </div>
@@ -111,9 +112,18 @@ import axios from "axios"
 </script>
 
 <style scoped>
-.container{
-    margin-top: 5em;
+@media (min-width: 1079px){
+    .container{
+        margin-top: 5em;
+        width:80em;
+    }
 }
+@media (max-width: 1079px){
+    .container{
+        margin-top: 5em;
+    }
+}
+
 .text-left{
     text-align:left;
 }
@@ -123,6 +133,9 @@ import axios from "axios"
 .my_border{
     border: solid 2px black;
     background-color:rgba(250,250,250,0.7);
-    height:21em;
+    height:23em;
+    max-width:90vw;
+    margin:auto;
+   
 }
 </style>
