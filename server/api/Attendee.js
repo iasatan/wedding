@@ -33,10 +33,10 @@ router.post("/", async (req, res) => {
     posts.insertOne(attendee).then(result=>{
         id=result.insertedId;
         sgMail.send(msg)
-        .then((res)=>{
-            console.log(res[0].statusCode)
-            console.log(res[0].headers)
-            return res.send({"id":id});
+        .then((emailres)=>{
+            console.log(emailres[0].statusCode)
+            console.log(emailres[0].headers)
+            return res.status(200).send({"id":id});
     }).catch(err=>console.log(err));
         
     }).catch(err=>{
