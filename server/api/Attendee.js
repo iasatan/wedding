@@ -1,6 +1,12 @@
 const express = require("express");
 const mongodb = require("mongodb");
 const router = express.Router();
+const sgMail = require('@sendgrid/mail');
+const msg = {
+    from: 'satanadam@outlook.com', // Change to your verified sender
+    subject: 'Papp Szonja és Sátán Ádám Esküvője',
+    text: 'Gyere, jó lesz, 2021-09-04 15:00'
+  }
 
 router.post("/", async (req, res) => {
     let attendee ={
@@ -21,18 +27,33 @@ router.post("/", async (req, res) => {
         res.status(400).send();
         return;
     }
-    return res.status(200).send({"id":012});
+    msg.to=attendee.email;
+    if(process.env.SENDGRID_API_KEY){
     const posts = await loadBooksCollection();
     posts.insertOne(attendee).then(result=>{
         id=result.insertedId;
-        res.status(201).send({"id":id});
+        sgMail.send(msg)
+        .then((res)=>{
+            
+            console.log(res[0].statusCode)
+             console.log(res[0].headers)
+             return res.status(201).send({"id":id});
+    }).catch(err=>console.log(err));
+        
     }).catch(err=>{
         return res.status(400).send();
     });
+    
+    }
+    else{
+        return res.status(200).send({"id":012});
+    }
+    
 
 });
 
 async function loadBooksCollection() {
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", {useNewUrlParser: true});
     return client.db("wedding").collection("attendees");
 }
