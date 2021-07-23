@@ -30,6 +30,11 @@
     padding-top:5em;
 }
 }
+@media (max-width: 1081px){
+.container{
+    padding-top:3em;
+}
+}
 
 #birthImage{
     width: 10em;

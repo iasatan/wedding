@@ -24,6 +24,6 @@ export default {
     max-width: 50em;;
     margin-top: 5em;
     text-align: left;
-    border:black solid 3px
+    background-color:rgba(250,250,250,0.7);
 }
 </style>

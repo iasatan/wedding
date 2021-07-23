@@ -20,6 +20,11 @@ export default {
 }
 </script>
 <style scoped>
+@media (max-width: 1081px){
+.home{
+  padding-top:4em;
+}
+}
 img{
   max-height: 90vh;
   width: 100%;

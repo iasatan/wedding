@@ -5,20 +5,20 @@
         <div class="form-group row">
             <div class="form-check">
                 <input class="form-check-input" v-model="attendee.lactose" type="checkbox" id="laktozeCheck">
-                <span>Laktózérzékenység</span>
+                <span>Laktóz</span>
             </div>
         </div>
         <div class="form-group row">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" v-model="attendee.milk" id="milkCheck">
-                <span>Tej allergia</span>
+                <span>Tejfehérje</span>
             </div>
         </div>
 
         <div class="form-group row">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" v-model="attendee.gluten" id="glutenCheck">
-                <span>Glutén allergia</span>
+                <span>Glutén</span>
             </div>
         </div>
         <div class="form-group row">

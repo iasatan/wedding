@@ -5,11 +5,12 @@
         <AllergyForm :attendee="attendee" class="my-padding"/>
         <div class="m-2 h4 font-weight-bold" v-if="attendees.length<1">
             <br>
-            <button type="button" class="btn btn-warning " @click="add(k)">+1 Fő hozzáadása</button>
+            <button type="button" class="btn btn-plus " @click="add(k)">+1 Fő hozzáadása</button>
         </div>
+        <div class="plus-person">
         <div v-for="(attendee,k) in attendees" :key="k">
             <div class="row">
-                <div class="form-group my-padding col-6">
+                <div class="form-group my-padding col-7">
                     <label class="col-form-label" for="name">Név </label>
                         <input type="text" v-model="attendee.name" class="form-control" id="name"  placeholder="Jóska Pistike">
                 </div>
@@ -18,15 +19,16 @@
                         <input type="number" v-model="attendee.age" class="form-control" id="age">
                 </div>
                 <div class="col-1 form-group my-padding">
-                    <button type="button" class="btn btn-danger " @click="remove(k)">X</button>
+                    <button type="button" class="btn btn-remove " @click="remove(k)">X</button>
                 </div>
             </div>
             <AllergyForm :attendee="attendee"/>
             <div class="m-2 h4 font-weight-bold">
                 <br>
-                <button type="button" class="btn btn-warning " @click="add(k)" v-show="k == attendees.length-1">+1 Fő hozzáadása</button>
+                <button type="button" class="btn btn-plus " @click="add(k)" v-show="k == attendees.length-1">+1 Fő hozzáadása</button>
             </div>
 
+        </div>
         </div>
 
 
@@ -119,8 +121,19 @@
 .btn{
     border:solid 1px lightgray
 }
+.btn-plus{
+    background-color:rgba(230,230,230,0.7)
+}
+.btn-remove{background-color:rgba(230,230,230,0.7)
+
+}
 .bottom_padding{
     padding-top:1em;
     padding-bottom:3em;
+}
+@media (min-width: 1079px){
+.plus-person{
+    max-width:37em
+}
 }
 </style>

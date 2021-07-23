@@ -65,6 +65,9 @@ export default {
 .centered{
   text-align:center;
 }
+.container{
+  padding-top: 3em;
+}
 @media (min-width: 1079px){
 .container{
   padding-top: 5em;
@@ -87,13 +90,7 @@ export default {
   width: 5em;
   height: 4em;
 }
-.vl-lg{
-    border-left: 6px solid black;
-    height: 24em;
-    margin-top:2em;
-    position: absolute;
-    left: 50%;
-}
+
 .my-padding{
   padding-top: 2.5em;
 }

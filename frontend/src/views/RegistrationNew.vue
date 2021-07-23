@@ -90,6 +90,7 @@ import axios from "axios"
                     if (this.canBring || this.attendees.length > 0) {
                         for (let i = 0; i < this.attendees.length; i++) {
                             this.attendees[i].parentId = parentId;
+                            this.attendees[i].attend=this.attendee.attend;
                             let result = await axios.post('/api/attendee', this.attendees[i]);
                             console.log(await result);
                             if(!result){
@@ -112,9 +113,7 @@ import axios from "axios"
 </script>
 
 <style scoped>
-.my-padding{
-    margin-top:2em;
-}
+
 @media (min-width: 1079px){
     .container{
         margin-top: 5em;
@@ -123,6 +122,11 @@ import axios from "axios"
     .my-padding{
     margin-top:1em;
 }
+}
+@media (max-width: 1081px){
+    .container{
+        margin-top: 4em;
+    }
 }
 
 
@@ -136,6 +140,7 @@ import axios from "axios"
     height:23em;
     max-width:90vw;
     margin:auto;
+    margin-top:5em;
    
 }
 </style>

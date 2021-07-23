@@ -1,6 +1,6 @@
 <template>
   <div class="containe-fluid">
-  <b-navbar toggleable="lg" class="menu">
+  <b-navbar toggleable="lg" class="menu" fixed="top">
     <b-navbar-brand router-link to="/">
         <img src="..//assets/logo.png" class="d-inline-block align-top" width="40e" height="40e" alt="Esküvő">
         <span class="h4 linkItem vertical">Főoldal</span>
@@ -9,8 +9,6 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      
-
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
@@ -20,8 +18,6 @@
         <b-nav-item class="linkItem h5" router-link to="/galery">Galéria </b-nav-item>
         <b-nav-item class="linkItem h5 " router-link to="/contact">Kapcsolat </b-nav-item>
       </b-navbar-nav>
-
-        
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -54,11 +50,6 @@ import countdown from './Countdown.vue'
 .menu
 {
   background-color:rgba(200, 200, 200, 0.7);
-  position:fixed;
-    top: 0;
-    overflow: hidden;
-    z-index:100;
-     width: 100%;
 }
 .linkItem{
     color:rgba(0,0,0,0.55);
@@ -70,11 +61,6 @@ import countdown from './Countdown.vue'
   .menu
   {
     background-color:rgba(200, 200, 200, 1);
-    position:relative;
-    top: 0;
-    overflow: hidden;
-    z-index:100;
-     width: 100%;
   }
 }
 .centered{

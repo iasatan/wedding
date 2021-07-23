@@ -10,14 +10,16 @@ Addig is ha kedvetek tartja, nézzetek meg pár képet a közös életünkből.
 </template>
 
 <script>
-
 export default {
+  
   name: 'Galery',
-  components: {
-  }
 }
 </script>
+
 <style scoped>
+.container{
+  padding-top:3em;
+}
 @media (min-width: 1079px){
 .container{
   padding-top: 5em;
