@@ -7,6 +7,9 @@
                     <div v-if="firstPage">
                         <BaseRegistrationForm :attendee="attendee" v-on:submitted="nextpage()" />
                     </div>
+                    <div v-else-if="registered">
+                        <RegistrationInfo :attendee="attendee" :attendees="attendees"/>
+                    </div>
                     <div v-else>
                         <div v-if="canBring">
                             <FamilyRegistrationFrom :attendee="attendee" :attendees="attendees" v-on:submitted="register()"/>
@@ -31,6 +34,7 @@ import contactBase from "../components/ContactBase.vue"
 import BaseRegistrationForm from "../components/BaseRegistrationForm.vue"
 import SingleRegistrationFrom from "../components/SingleRegistrationFrom.vue"
 import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
+import RegistrationInfo from "../components/RegistrationInfo.vue"
 import axios from "axios"
     export default {
         name: "Registration",
@@ -38,7 +42,8 @@ import axios from "axios"
             contactBase,
             BaseRegistrationForm,
             SingleRegistrationFrom,
-            FamilyRegistrationFrom      
+            FamilyRegistrationFrom,
+            RegistrationInfo
             },
         data() {
             return {
@@ -55,7 +60,8 @@ import axios from "axios"
                     attend: "minden",
                 },
                 firstPage:true,
-                canBring:true
+                canBring:true,
+                registered:false
             }
         },
         created:function(){
@@ -97,6 +103,7 @@ import axios from "axios"
                                 success=false;
                             }
                         }
+                        
                         console.log(success);
                         let toast = this.$toasted.show("Sikeres Regisztráció");
                         toast.goAway(3000);
@@ -104,6 +111,10 @@ import axios from "axios"
                         let toast = this.$toasted.show("Sikeres Regisztráció");
                         toast.goAway(3000);
                     }
+                    if(success){
+                            this.registered=true;
+                            this.$forceUpdate();
+                        }
                 }).catch(err => console.log(err));
 
 

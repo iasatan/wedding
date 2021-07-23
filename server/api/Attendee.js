@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
         res.status(400).send();
         return;
     }
+    return res.status(200).send({"id":012});
     const posts = await loadBooksCollection();
     posts.insertOne(attendee).then(result=>{
         id=result.insertedId;
