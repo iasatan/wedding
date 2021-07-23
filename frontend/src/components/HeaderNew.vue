@@ -27,7 +27,7 @@
             </router-view>
         </main>
         <div class="padding"></div>
-        <h1>Visszaszámlálás</h1>
+        <h1>Már csak</h1>
         <countdown deadline="2021-09-04 15:00:00" ></countdown>
     </div>
 </template>

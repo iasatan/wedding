@@ -3,13 +3,13 @@
         <form @submit="nextpage">
             <div class="form-group row m-2 my-padding">
                 <label class="col-form-label" for="name">Név </label>
-                <div class="col-lg-10 col-sm-12 ">
+                <div class="col-lg-10 col-sm-12 normal_font ">
                     <input type="text" v-model="attendee.name" class="form-control" id="name"  placeholder="Jóska Pista">
                 </div>
             </div>
             <div class="form-group row m-2">
                 <label class="col-form-label" for="name">Email </label>
-                <div class="col-lg-10 col-sm-12 ">
+                <div class="col-lg-10 col-sm-12 normal_font">
                     <input type="email" v-model="attendee.email" class="form-control" id="email" placeholder="joskapista@gmail.com">
                 </div>
             </div>
@@ -65,5 +65,8 @@ export default {
 .bottom_padding{
     padding-top:1em;
     padding-bottom:3em;
+}
+.normal_font{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="normal_font">
         <div class="row">
         <h4>Ételérzékenység/életmód:</h4>
         <div class="form-group row">
@@ -25,12 +25,6 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" v-model="attendee.vegan" id="VeganCheck">
                 <span>Vegán</span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" v-model="attendee.sugar" id="SugarCheck">
-                <span>Cukor</span>
             </div>
         </div>
             <div class="form-group row">
@@ -69,4 +63,7 @@
     .my_label{
         width:15em;
     }
+    .normal_font{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+}
 </style>

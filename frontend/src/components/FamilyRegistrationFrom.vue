@@ -33,7 +33,7 @@
 
 
         <h4 class="my-padding">Részvétel:</h4>
-        <fieldset class="form-group">
+        <fieldset class="form-group normal_font">
             <div class="row">
                 <div class="col-sm-10">
                     <div class="form-check">
@@ -135,5 +135,8 @@
 .plus-person{
     max-width:37em
 }
+}
+.normal_font{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

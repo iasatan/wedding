@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container normal_font">
     <div class="row">
       <h1>Helyszínek:</h1>
     </div>
@@ -61,6 +61,9 @@ export default {
   width:80%;
   }
   
+}
+.normal_font{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .centered{
   text-align:center;

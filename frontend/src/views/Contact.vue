@@ -3,7 +3,7 @@
         <h1> Kapcsolat</h1>
 
         <br>
-        <h3>Amennyiben bármilyen probléma, vagy kérdés felmerülne, az alábbi elérhetőségek valamelyikén lehet minket keresni (preferált a szöveges üzenet :) )</h3>        
+        <h3 class="normal_font">Amennyiben bármilyen probléma, vagy kérdés felmerülne, az alábbi elérhetőségek valamelyikén lehet minket keresni (preferált a szöveges üzenet :) )</h3>        
         <contactBase />
         
 
@@ -25,5 +25,8 @@ export default {
     margin-top: 5em;
     text-align: left;
     background-color:rgba(250,250,250,0.7);
+}
+.normal_font{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
