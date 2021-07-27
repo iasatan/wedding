@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <table class="table">
+    <table class="table table-hower table-bordered">
         <tr>
+            <th scope="col">+1 Fő</th>
             <th scope="col">Név</th>
             <th scope="col">Kor</th>
             <th scope="col">Email</th>
@@ -17,6 +18,9 @@
             <th scope="col">Baileys</th>
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
+                <td>
+                    <span v-if="attendee.parentId.length>0">+1 Fő</span>
+                </td>
                 <td>
                     {{attendee.name}}
                 </td>
