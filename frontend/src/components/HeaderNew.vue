@@ -1,9 +1,9 @@
 <template>
   <div class="containe-fluid">
   <b-navbar toggleable="lg" class="menu" fixed="top">
-    <b-navbar-brand router-link to="/">
-        <img src="..//assets/logo.png" class="d-inline-block align-top" width="40e" height="40e" alt="Esküvő">
-        <span class="h4 linkItem vertical">Főoldal</span>
+    <b-navbar-brand router-link to="/" class="logo">
+        <img src="..//assets/logo.png" class="d-inline-block align-top" width="50em" height="50em" alt="Esküvő" id="heathImage">
+        <span class="linkItem vertical">Főoldal</span>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -12,11 +12,11 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-        <b-nav-item class="linkItem h5" router-link to="/intro">Bemutatkozás </b-nav-item>
-        <b-nav-item class="linkItem h5" router-link to="/rspv">Visszajelzés </b-nav-item>
-        <b-nav-item class="linkItem h5" router-link to="/about">Az esküvőről </b-nav-item>
-        <b-nav-item class="linkItem h5" router-link to="/galery">Galéria </b-nav-item>
-        <b-nav-item class="linkItem h5 " router-link to="/contact">Kapcsolat </b-nav-item>
+        <b-nav-item class="linkItem h3" router-link to="/intro">Bemutatkozás </b-nav-item>
+        <b-nav-item class="linkItem h3" router-link to="/rspv">Visszajelzés </b-nav-item>
+        <b-nav-item class="linkItem h3" router-link to="/about">Az esküvőről </b-nav-item>
+        <b-nav-item class="linkItem h3" router-link to="/galery">Galéria </b-nav-item>
+        <b-nav-item class="linkItem h3 " router-link to="/contact">Kapcsolat </b-nav-item>
       </b-navbar-nav>
       </b-navbar-nav>
     </b-collapse>
@@ -41,8 +41,13 @@ import countdown from './Countdown.vue'
 </script>
 
 <style scoped>
-.vertical{
-  vertical-align:middle;
+    #heathImage{
+        margin-right: 1em;
+        margin-left: 0.5em;
+    }
+.logo{
+    vertical-align: center;
+    font-size: 2em;
 }
 .navbar-nav{
     margin-left: auto;
@@ -62,9 +67,6 @@ import countdown from './Countdown.vue'
   {
     background-color:rgba(200, 200, 200, 1);
   }
-}
-.centered{
- text-align: center;
 }
 .padding{
   margin-top: 10em;

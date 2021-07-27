@@ -1,7 +1,7 @@
 <template>
     <div class="container" id="timeline">
     <div class="text-left">
-        <h2>Bemutatkozás (a menyasszony előadásában) </h2>
+        <h1>Bemutatkozás (a menyasszony előadásában) </h1>
     </div>
         <div class="row">
             <img src="../assets/powerpoint1.png" class="col-lg"/>
@@ -36,13 +36,4 @@
 }
 }
 
-#birthImage{
-    width: 10em;
-}
-.schoolLabel{
-    padding-top: 2em;
-}
-.schoolLabel2{
-    padding-top: 1em;
-}
 </style>

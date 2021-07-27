@@ -231,6 +231,7 @@ export default {
   perspective: 600px;
   margin: 0 auto;
 
+
 }
 
 .flip-clock__piece {
@@ -247,8 +248,10 @@ export default {
 }
 
 .my_card{
+  margin:auto;
   border: 1px solid #96989a;
   border-radius: 0.15em;
+  text-shadow: 2px 2px #96989a
 }
 
 .flip-card {

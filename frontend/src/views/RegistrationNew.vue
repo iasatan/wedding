@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="text text-left">
-            <h2 >Visszajelzés!</h2>
+            <h2 >Visszajelzés</h2>
             <div class="my-padding row">
                 <div class="col-lg-6">
                     <div v-if="firstPage">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-4 my_border">
                 <br>
-                    <h3>Óhaj Sóhaj, észrevétel:</h3>
+                    <h3>Óhaj-sóhaj, észrevétel:</h3>
                     <contactBase/>
                 </div>
             </div>

@@ -23,6 +23,7 @@ export default {
 @media (max-width: 1081px){
 .home{
   padding-top:4em;
+
 }
 }
 img{

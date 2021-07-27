@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container extra-font">
         <h1> Kapcsolat</h1>
 
         <br>
-        <h3 class="normal_font">Amennyiben bármilyen probléma, vagy kérdés felmerülne, az alábbi elérhetőségek valamelyikén lehet minket keresni (preferált a szöveges üzenet :) )</h3>        
-        <contactBase />
+        <h4 class="extra-font">Amennyiben bármilyen probléma, vagy kérdés felmerülne, az alábbi elérhetőségek valamelyikén lehet minket keresni (preferált a szöveges üzenet :) )</h4>
+        <contactBase class="h4" />
         
 
     </div>
@@ -29,4 +29,7 @@ export default {
 .normal_font{
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
+    .extra-font{
+        font-family: 'Cormorant Upright', serif;
+    }
 </style>

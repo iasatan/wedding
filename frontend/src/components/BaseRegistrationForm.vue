@@ -51,6 +51,11 @@ export default {
 .container{
     max-width: 50em;;
     text-align: left;
+
+}
+.container ::placeholder {
+    color: #c5cbd5;
+    font-size: 1em;
 }
 .my-padding{
     margin-top:5em;

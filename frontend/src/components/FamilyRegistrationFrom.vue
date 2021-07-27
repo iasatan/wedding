@@ -12,11 +12,11 @@
             <div class="row">
                 <div class="form-group my-padding col-7">
                     <label class="col-form-label" for="name">Név </label>
-                        <input type="text" v-model="attendee.name" class="form-control" id="name"  placeholder="Jóska Pistike">
+                        <input type="text" v-model="attendee.name" class="form-control normal_font" id="name"  placeholder="Jóska Pistike">
                 </div>
                 <div class="form-group my-padding col-3">
                     <label class="col-form-label" for="name">Kor </label>
-                        <input type="number" v-model="attendee.age" class="form-control" id="age">
+                        <input type="number" v-model="attendee.age" class="form-control normal_font" id="age">
                 </div>
                 <div class="col-1 form-group my-padding">
                     <button type="button" class="btn btn-remove " @click="remove(k)">X</button>

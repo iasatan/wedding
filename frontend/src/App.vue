@@ -5,17 +5,19 @@
 </template>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Courgette&family=Dancing+Script&family=Petit+Formal+Script&display=swap');
 
     #app {
-        font-family: 'Engagement', cursive;
+        font-family: 'Petit Formal Script', cursive;
+        font-family: 'Cormorant Upright', serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
         min-height: 100vh;
         max-width: 100%;
-        background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('/background2.jpg');
-        background-size: 60%;
+        background: url('/background2.jpg');
+        background-size: 100%;
         background-repeat: repeat;
     }
 </style>

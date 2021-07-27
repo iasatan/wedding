@@ -3,7 +3,7 @@
     <h1>Sikeres Regisztráció</h1>
     <h2>Kedves {{attendee.name}}!</h2>
     szívesen látunk!
-    Az esküvő időpontja 2021-09-04 15:00, ments el a naptáradban ;)
+    Az esküvő időpontja 2021-09-04 15:00, ments el a naptáradba ;)
     <div v-show="attendee.attendeeAllergyCount>0"> 
         A következő<span v-show="attendeeAllergyCount>1">k</span>re igyekszünk figyelni a kedvedért:
         <div v-show="attendee.vegan">Vegán vagy</div>
