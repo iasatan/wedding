@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <table class="table table-dark">
+    <table class="table">
         <tr>
             <th scope="col">Név</th>
             <th scope="col">Kor</th>
@@ -16,7 +16,7 @@
             <th scope="col">Jager</th>
             <th scope="col">Baileys</th>
         </tr>
-            <tr v-for="(attendee,k) in attendees" :key="k">
+        <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
                     {{attendee.name}}
                 </td>
@@ -56,6 +56,7 @@
                 <td>
                    <span v-if="attendee.baileys">X</span>
                 </td>
+            </tr>
         </table>
 
   </div>
