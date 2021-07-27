@@ -90,11 +90,8 @@ export default {
 }
 </script>
 <style scoped>
-@media (max-width: 1081px){
 .container{
   padding-top:4em;
-
-}
 }
 img{
   max-height: 90vh;
