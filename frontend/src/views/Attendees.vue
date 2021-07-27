@@ -1,9 +1,21 @@
 <template>
   <div class="container">
-    <table class="table">
+    <table class="table table-striped">
         <tr>
-            <th>Név</th>
-            <th>Kor</th></th>
+            <th scope="col">Név</th>
+            <th scope="col">Kor</th>
+            <th scope="col">Email</th>
+            <th scope="col">Glutén</th>
+            <th scope="col">Laktóz</th>
+            <th scope="col">Tej</th>
+            <th scope="col">Vegán</th>
+            <th scope="col">Egyéb</th>
+            <th scope="col">Részvétel</th>
+            <th scope="col">Bor</th>
+            <th scope="col">Pálinka</th>
+            <th scope="col">Jager</th>
+            <th scope="col">Baileys</th>
+
         </tr>
         <div v-for="(attendee,k) in attendees" :key="k">
             <tr>
@@ -12,6 +24,39 @@
                 </td>
                 <td>
                     {{attendee.age}}
+                </td>
+                <td>
+                    <a :href="attendee.email">{{attendee.email}}</a>
+                </td>
+                <td>
+                    <span v-if="attendee.gluten">X</span>
+                </td>
+                <td>
+                    <span v-if="attendee.lactose">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.milk">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.vegan">X</span>
+                </td>
+                <td>
+                    {{attendee.other}}
+                </td>
+                <td>
+                    {{attendee.attend}}
+                </td>
+                <td>
+                    <span v-if="attendee.bor">X</span>
+                </td>
+                <td>
+                    <span v-if="attendee.palinka">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.jager">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.baileys">X</span>
                 </td>
             </tr>
         </div>
