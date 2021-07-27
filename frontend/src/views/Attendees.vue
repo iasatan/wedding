@@ -19,7 +19,7 @@
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
-                    <span v-if="attendee.parentId.length>0">+1 Fő</span>
+                    <span v-if="attendee.parentId && attendee.parentId.length>0">+1 Fő</span>
                 </td>
                 <td>
                     {{attendee.name}}
