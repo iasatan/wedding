@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <table class="table table-striped">
+    <table class="table table-dark">
         <tr>
             <th scope="col">Név</th>
             <th scope="col">Kor</th>
@@ -15,9 +15,10 @@
             <th scope="col">Pálinka</th>
             <th scope="col">Jager</th>
             <th scope="col">Baileys</th>
-
         </tr>
+    </table>
         <div v-for="(attendee,k) in attendees" :key="k">
+            <table class="table">
             <tr>
                 <td>
                     {{attendee.name}}
@@ -59,8 +60,9 @@
                    <span v-if="attendee.baileys">X</span>
                 </td>
             </tr>
+        </table>
+
         </div>
-    </table>
   </div>
 </template>
 
@@ -74,9 +76,13 @@ export default {
             }
         },
         created: async function(){
-            axios.get("/api/attendee").then((result)=>{
+            axios.get("/api/attendee/mock").then((result)=>{
                 this.attendees=result.data;
+                axios.get("/api/attendee/mock").then((result)=>{
+                    this.attendees.push(...result.data);
             })
+            })
+            
         },
 }
 </script>
