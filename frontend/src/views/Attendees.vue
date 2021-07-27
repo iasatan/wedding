@@ -76,12 +76,15 @@ export default {
             }
         },
         created: async function(){
-            axios.get("/api/attendee/mock").then((result)=>{
+            axios.get("/api/attendee").then((result)=>{
                 this.attendees=result.data;
+                
+            }).catch((err=>{
+                console.log(err);
                 axios.get("/api/attendee/mock").then((result)=>{
                     this.attendees.push(...result.data);
-            })
-            })
+                })
+            }))
             
         },
 }
