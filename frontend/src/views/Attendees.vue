@@ -29,7 +29,7 @@ export default {
             }
         },
         created: async function(){
-            axios.get("/api/attendee/mock").then((result)=>{
+            axios.get("/api/attendee").then((result)=>{
                 this.attendees=result.data;
             })
         },
