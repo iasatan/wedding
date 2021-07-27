@@ -29,20 +29,18 @@ router.post("/", async (req, res) => {
     }
     msg.to=attendee.email;
     if(process.env.SENDGRID_API_KEY){
-    const posts = await loadBooksCollection();
-    posts.insertOne(attendee).then(result=>{
-        id=result.insertedId;
-        sgMail.send(msg)
-        .then((emailres)=>{
-            console.log(emailres[0].statusCode)
-            console.log(emailres[0].headers)
-            return res.status(200).send({"id":id});
-    }).catch(err=>console.log(err));
-        
-    }).catch(err=>{
+        const attendees = await loadAttendeeCollection();
+        attendees.insertOne(attendee).then(result=>{
+            id=result.insertedId;
+            sgMail.send(msg)
+                .then((emailres)=>{
+                    console.log(emailres[0].statusCode)
+                    console.log(emailres[0].headers)
+                    return res.status(200).send({"id":id});
+            }).catch(err=>console.log(err));
+        }).catch(err=>{
         return res.status(400).send();
-    });
-    
+        });
     }
     else{
         return res.status(200).send({"id":012});
@@ -51,7 +49,33 @@ router.post("/", async (req, res) => {
 
 });
 
-async function loadBooksCollection() {
+router.get("/", async (req,res)=>{
+    const attendees = await loadAttendeeCollection();
+    let attendeeList = await attendees.find().toArray();
+    return res.send(attendeeList);
+})
+router.get("/mock", async (req,res)=>{
+    let attendeeList =[];
+    let attendee ={
+        id:0,
+        name:"Teszt János",
+        email:"asd@asd.hu",
+        age:23,
+        lactose:false,
+        milk:true,
+        gluten:false,
+        vegan:true,
+        other:"",
+        attend:"minden",
+        parentId:0
+    };
+    attendeeList.push(attendee)
+    attendeeList.push(attendee)
+    console.log("sent attendee mocks");
+    return res.send(attendeeList);
+})
+
+async function loadAttendeeCollection() {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", {useNewUrlParser: true});
     return client.db("wedding").collection("attendees");

@@ -9,7 +9,7 @@ module.exports = {
                 target: 'http://localhost:8080'
             },
             '/img': {
-                target: 'http://localhost:8080'
+                target: 'http://localhost:8081'
             },
             '/csv': {
                 target: 'http://localhost:8080'

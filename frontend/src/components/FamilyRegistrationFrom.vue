@@ -3,6 +3,7 @@
     <form @submit="register">
         <h2>{{attendee.name}}</h2>
         <AllergyForm :attendee="attendee" class="my-padding"/>
+        <DrinkForm :attendee="attendee" class="my-padding"/>
         <div class="m-2 h4 font-weight-bold" v-if="attendees.length<1">
             <br>
             <button type="button" class="btn btn-plus " @click="add(k)">+1 Fő hozzáadása</button>
@@ -23,6 +24,7 @@
                 </div>
             </div>
             <AllergyForm :attendee="attendee"/>
+            <DrinkForm :attendee="attendee" class="my-padding"/>
             <div class="m-2 h4 font-weight-bold">
                 <br>
                 <button type="button" class="btn btn-plus " @click="add(k)" v-show="k == attendees.length-1">+1 Fő hozzáadása</button>
@@ -65,9 +67,10 @@
 
 <script>
     import AllergyForm from "./AllergyFrom";
+    import DrinkForm from "./DrinkForm"
     export default {
         name: "FamilyRegistrationFrom",
-        components: {AllergyForm},
+        components: {AllergyForm, DrinkForm},
         props: {
             attendee: {required: true},
             attendees:{required: true}

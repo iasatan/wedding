@@ -5,6 +5,7 @@ import Registration from '../views/RegistrationNew'
 import Introduction from '../views/IntroductionNew.vue'
 import Galery from '../views/Galery.vue'
 import Contact from '../views/Contact.vue'
+import Attendees from '../views/Attendees.vue'
 
 Vue.use(VueRouter)
 
@@ -44,6 +45,11 @@ const routes = [
         path:'/contact',
         name:'Contact',
         component:Contact
+    },
+    {
+        path:'/attendees',
+        name:'Attendees',
+        component:Attendees
     }
 ]
 
