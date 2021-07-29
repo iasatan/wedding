@@ -6,7 +6,8 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://localhost:8080'
+                target: 'http://pappsatan.herokuapp.com',
+                secure:false
             },
             '/img': {
                 target: 'http://localhost:8081'

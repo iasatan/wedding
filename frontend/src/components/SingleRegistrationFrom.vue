@@ -4,6 +4,7 @@
         <div class="row">
             <h2>{{attendee.name}}</h2>
             <AllergyForm :attendee="attendee" class="my-padding"/>
+            <DrinkForm :attendee="attendee" class="my-padding"/>
         </div>
         <h4 class="my-padding">Részvétel:</h4>
         <fieldset class="form-group">
@@ -37,10 +38,12 @@
 </template>
 
 <script>
-import AllergyForm from "./AllergyFrom";
+import AllergyForm from "./AllergyFrom"; 
+import DrinkForm from "./DrinkForm"
+
     export default {
         name: "SingleRegistrationFrom",
-        components: {AllergyForm},
+        components: {AllergyForm, DrinkForm},
         props: {
             attendee: {required: true}
 

@@ -228,17 +228,14 @@ export default {
 <style scoped>
 .flip-clock {
   text-align: center;
+  vertical-align: middle;
   perspective: 600px;
   margin: 0 auto;
-
-
 }
 
 .flip-clock__piece {
   display: inline-block;
   margin: 0 0.2vw;
-
-
 }
 
 .flip-clock__slot {
@@ -257,15 +254,15 @@ export default {
 .flip-card {
   display: block;
   position: relative;
-  font-size: 2.25rem;
+  font-size: 2.25em;
 }
 
 @media (min-width: 1000px) {
   .flip-clock__slot {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   .flip-card {
-    font-size: 3rem;
+    font-size: 3em;
   }
 }
 
@@ -275,6 +272,6 @@ export default {
   background: rgba(216, 214, 223, 0.73);
   border-radius: 0.15em;
   width: 2.2em;
-  height: 1.3em;
+  height: 1.7em;
 }
 </style>

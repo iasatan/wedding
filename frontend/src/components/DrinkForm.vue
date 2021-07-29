@@ -1,20 +1,53 @@
 <template>
     <div class="normal_font">
         <div class="row">
-        <h4>Ital preferencia:</h4>
-        <div class="form-group row">
-            <div class="form-check">
-                <input class="form-check-input" v-model="attendee.palinka" type="checkbox" id="palinkaCheck">
-                <span>Pálinka</span>
-            </div>
-        </div>
+        <h4>Alkohol igényfelmérés:</h4>
+        
         <div class="form-group row">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" v-model="attendee.bor" id="borCheck">
                 <span>Bor</span>
             </div>
         </div>
-
+        <div v-show="attendee.bor" class="left_padding">
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.szaraz" id="szarazCheck">
+                    <span>Száraz</span>
+                </div>
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.edes" id="edesCheck">
+                    <span>Édes</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.roze" id="rozeCheck">
+                    <span>Rozé</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.voros" id="vorosCheck">
+                    <span>Vörös</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.feher" id="feherCheck">
+                    <span>Fehér</span>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <div class="form-group row">
+            <div class="form-check">
+                <input class="form-check-input" v-model="attendee.palinka" type="checkbox" id="palinkaCheck">
+                <span>Pálinka</span>
+            </div>
+        </div>
         <div class="form-group row">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" v-model="attendee.jager" id="jagerCheck">
@@ -27,13 +60,24 @@
                 <span>Baileys</span>
             </div>
         </div>
-            <div class="form-group row">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="OtherCheck">
-                    <input type="text" class="form-control my_label" id="othreCheck" placeholder="Egyéb" v-model="attendee.other">
-
-                </div>
+        <div class="form-group row">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" v-model="attendee.vodka" id="vodkaCheck">
+                <span>Vodka</span>
             </div>
+        </div>
+           <div class="form-group row">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" v-model="attendee.whisky" id="whiskyCheck">
+                <span>Whisky</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" v-model="attendee.tequila" id="tequilaCheck">
+                <span>Tequila</span>
+            </div>
+        </div>
     </div>
 
 
@@ -55,6 +99,9 @@
 </script>
 
 <style scoped>
+.left_padding{
+    padding-left: 3em;
+}
     .container-fluid {
         width: 50em;
         max-width: 100vh;

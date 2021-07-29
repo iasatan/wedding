@@ -2,7 +2,7 @@
   <div class="containe-fluid">
   <b-navbar toggleable="lg" class="menu" fixed="top">
     <b-navbar-brand router-link to="/" class="logo">
-        <img src="..//assets/logo.png" class="d-inline-block align-top" width="50em" height="50em" alt="Esküvő" id="heathImage">
+        <img src="../assets/logo.png" class="d-inline-block align-top" width="50em" height="50em" alt="Esküvő" id="heathImage">
         <span class="linkItem vertical">Főoldal</span>
     </b-navbar-brand>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Jegyes Kép" src="../assets/background.jpg">
+    <img alt="Jegyes Kép" src="../assets/backgroundHR.jpg">
     <div>
       <div class="container-fluid">
         <h1>Köszöntünk az esküvői weboldalunkon!</h1>
@@ -20,14 +20,31 @@ export default {
 }
 </script>
 <style scoped>
+#dateDiv{
+  position:absolute;
+  width: 100%;
+  text-align: center;
+}
+#dateSpan{
+  top:10%;
+  width:100%;
+  text-align: center;
+  color:white;
+  z-index: 1000;
+  font-size:10em;
+   text-shadow: 2px 2px #96989a;
+  position: absolute;
+}
 @media (max-width: 1081px){
-.home{
-  padding-top:4em;
-
+  .home{
+    padding-top:4em;
+  }
+  #dateSpan{
+  top:10%;
+  font-size:3em;
 }
 }
 img{
-  max-height: 90vh;
   width: 100%;
   top: -30px;
   position: relative;
