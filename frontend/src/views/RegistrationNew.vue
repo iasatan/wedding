@@ -97,6 +97,7 @@ import axios from "axios"
                         await axios.post('/api/attendee', this.attendee).then(async (res) => {
                             console.log(res.data.id);
                             this.registered=true;
+                            this.firstPage=false;
                             this.$forceUpdate();
                         });
                     }
