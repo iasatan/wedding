@@ -4,8 +4,8 @@
     <h2>Kedves {{attendee.name}}!</h2>
     <div>Köszönjük a regisztrációt! </div>
     <div>Nagyon sajnáljuk, hogy nem tudsz jelen lenni az esküvőnkön.</div> 
-    <div>Amennyiben később mégis úgy alakulna, hogy részt tudsz venni, vedd fel velünk a kapcsolatot, 
-    és igyekszünk megoldani, hogy ott lehess </div>
+    <p>Amennyiben később mégis úgy alakulna, hogy részt tudsz venni, vedd fel velünk a kapcsolatot, 
+    és igyekszünk megoldani, hogy ott lehess </p>
   </div>
 </template>
 

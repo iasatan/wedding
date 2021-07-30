@@ -8,11 +8,11 @@
                         <BaseRegistrationForm :attendee="attendee" v-on:submitted="nextpage()" />
                     </div>
                     <div v-else-if="registered">
-                        <div v-if="attendee.attend=='minden'">
-                            <RegistrationInfo :attendee="attendee" :attendees="attendees"/>
+                        <div v-if="attendee.attend=='semmi'">
+                            <RegistrationInfoSad :attendee="attendee" />
                         </div>
                         <div v-else>
-                            <RegistrationInfoSad :attendee="attendee" />
+                            <RegistrationInfo :attendee="attendee" :attendees="attendees"/>
                         </div>
                     </div>
                      

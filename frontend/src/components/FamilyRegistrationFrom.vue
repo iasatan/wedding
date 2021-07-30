@@ -90,7 +90,7 @@
                     gluten: false,
                     vegan: false,
                     other: "",
-                    attend: "minden",
+                    attend: this.attendee.attend,
                     canBring:false
                 });
             },
