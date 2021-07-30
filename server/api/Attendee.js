@@ -8,6 +8,16 @@ const msg = {
     text: 'Gyere, jó lesz, 2021-09-04 15:00'
   }
 
+router.post('/email', async (req,res)=>{
+    msg.text=req.body.msg;
+    msg.to=req.body.email;
+    sgMail.send(msg).then((emailres)=>{
+        console.log(emailres[0].statusCode)
+        console.log(emailres[0].headers)
+        return res.status(200).send();
+    }).catch(err=>console.log(err));
+})
+
 router.post("/", async (req, res) => {
     let attendee ={
         name:req.body.name,
@@ -38,17 +48,11 @@ router.post("/", async (req, res) => {
         res.status(400).send();
         return;
     }
-    msg.to=attendee.email;
     if(process.env.SENDGRID_API_KEY){
         const attendees = await loadAttendeeCollection();
         attendees.insertOne(attendee).then(result=>{
             id=result.insertedId;
-            sgMail.send(msg)
-                .then((emailres)=>{
-                    console.log(emailres[0].statusCode)
-                    console.log(emailres[0].headers)
-                    return res.status(200).send({"id":id});
-            }).catch(err=>console.log(err));
+            return res.status(200).send({"id":id});
         }).catch(err=>{
         return res.status(400).send();
         });

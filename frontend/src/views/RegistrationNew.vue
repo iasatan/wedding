@@ -126,6 +126,13 @@ import axios from "axios"
                     if(success){
                             this.registered=true;
                             this.$forceUpdate();
+                            axios.post('/api/attendee/email',{email:this.attendee.email,msg:"Gyere jó lesz"}).then(()=>{
+                                let toast = this.$toasted.show("Emailt kiküldtük");
+                                toast.goAway(3000);
+                            }).catch(()=>{
+                                let toast = this.$toasted.show("Email küldés sikertelen, kérlek mentsd el az információkat");
+                                toast.goAway(30000);
+                            })
                         }
                 }).catch(err => console.log(err));
 
