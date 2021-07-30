@@ -94,11 +94,10 @@ import axios from "axios"
                 console.log(this.attendee);
                 if(this.attendee.name && this.attendee.email){
                     if(this.attendee.attend=='semmi'){
-                        axios.post('/api/attendee', this.attendee).then(async (res) => {
+                        await axios.post('/api/attendee', this.attendee).then(async (res) => {
                             console.log(res.data.id);
                             this.registered=true;
                             this.$forceUpdate();
-                            return;
                         });
                     }
                     else{
