@@ -52,13 +52,37 @@
                     <span v-if="attendee.bor">X</span>
                 </td>
                 <td>
-                    <span v-if="attendee.palinka">X</span>
+                    <span v-if="attendee.szaraz">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.edes">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.roze">X</span>
+                </td>
+                <td>
+                    <span v-if="attendee.voros">X</span>
+                </td>
+                <td>
+                    <span v-if="attendee.feher">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.palinka">X</span>
                 </td>
                 <td>
                    <span v-if="attendee.jager">X</span>
                 </td>
                 <td>
-                   <span v-if="attendee.baileys">X</span>
+                    <span v-if="attendee.baileys">X</span>
+                </td>
+                <td>
+                    <span v-if="attendee.vodka">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.whisky">X</span>
+                </td>
+                <td>
+                   <span v-if="attendee.tequila">X</span>
                 </td>
             </tr>
         </table>
@@ -81,9 +105,6 @@ export default {
                 
             }).catch((err=>{
                 console.log(err);
-                axios.get("/api/attendee/mock").then((result)=>{
-                    this.attendees.push(...result.data);
-                })
             }))
             
         },

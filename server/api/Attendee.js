@@ -10,7 +10,6 @@ const msg = {
 
 router.post("/", async (req, res) => {
     let attendee ={
-        id:0,
         name:req.body.name,
         email:req.body.email,
         age:req.body.age,
@@ -20,7 +19,19 @@ router.post("/", async (req, res) => {
         vegan:req.body.vegan,
         other:req.body.other,
         attend:req.body.attend,
-        parentId:req.body.parentId
+        parentId:req.body.parentId,
+        bor:req.body.bor,
+        szaraz:req.body.szaraz,
+        edes:req.body.edes,
+        roze:req.body.roze,
+        voros:req.body.voros,
+        feher:req.body.feher,
+        palinka:req.body.palinka,
+        jager:req.body.jager,
+        baileys:req.body.baileys,
+        vodka:req.body.vodka,
+        whisky:req.body.whisky,
+        tequila:req.body.tequila
     };
     console.log(attendee);
     if (attendee.name == null || attendee.email == null || attendee.attend == null) {

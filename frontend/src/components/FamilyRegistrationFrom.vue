@@ -23,8 +23,14 @@
                     <button type="button" class="btn btn-remove " @click="remove(k)">X</button>
                 </div>
             </div>
+            <div class=my-padding></div>
             <AllergyForm :attendee="attendee"/>
-            <DrinkForm :attendee="attendee" class="my-padding"/>
+            <div v-if="attendee.age>=18">
+                <DrinkForm :attendee="attendee" class="my-padding"/>
+            </div>
+            <div v-else>
+                <DrinkForm :attendee="attendee" class="my-padding disabled"/>
+            </div>
             <div class="m-2 h4 font-weight-bold">
                 <br>
                 <button type="button" class="btn btn-plus " @click="add(k)" v-show="k == attendees.length-1">+1 Fő hozzáadása</button>
