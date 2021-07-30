@@ -25,6 +25,7 @@
             <th scope="col">Whisky</th>
             <th scope="col">Tequila</th>
             <th scope="col">Fehér</th>
+            <th scope="col">Dátum</th>
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
@@ -92,6 +93,9 @@
                 </td>
                 <td>
                    <span v-if="attendee.tequila">X</span>
+                </td>
+                <td>
+                    <span>{{attendee.timestamp}}</span>
                 </td>
             </tr>
         </table>
