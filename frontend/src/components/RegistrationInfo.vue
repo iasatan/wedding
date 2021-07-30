@@ -12,14 +12,10 @@
     <div v-show="attendees.length>0">
         <div class="my-padding-small">A következő általad megadott plusz főkkel fogunk számolni:</div>
         <div v-for="(attendee,k) in attendees" :key="k">
-            <h4>{{attendee.name}}</h4>
+            <h6>{{attendee.name}}</h6>
             <div v-if="attendee.attendeeAllergyCount>0" class="my-padding-small"> 
                 A következő<span v-show="attendeeAllergyCount>1">k</span>re igyekszünk figyelni a kedvéért:
-                <div v-show="attendee.vegan">Vegán </div>
-                <div v-show="attendee.gluten">Nem ehet</div>
-                <div v-show="attendee.milk">Semmilyen tejterméket nem fogyaszthat</div>
-                <div v-show="attendee.vegan">Laktózérzékenység</div>
-                <div v-show="attendee.other">Egyéb: {{attendee.other}}</div>
+                Nem fogyaszt {{attendee.allergyText}}
             </div>
             <div class="my-padding-small" v-else>
             Nincs semmilyen kaja igénye
