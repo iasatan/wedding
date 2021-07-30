@@ -13,9 +13,18 @@
             <th scope="col">Egyéb</th>
             <th scope="col">Részvétel</th>
             <th scope="col">Bor</th>
+            <th scope="col">Száraz</th>
+            <th scope="col">Édes</th>
+            <th scope="col">Rozé</th>
+            <th scope="col">Vörös</th>
+            <th scope="col">Fehér</th>
             <th scope="col">Pálinka</th>
             <th scope="col">Jager</th>
             <th scope="col">Baileys</th>
+            <th scope="col">Vodka</th>
+            <th scope="col">Whisky</th>
+            <th scope="col">Tequila</th>
+            <th scope="col">Fehér</th>
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>

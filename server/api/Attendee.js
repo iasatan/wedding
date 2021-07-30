@@ -41,7 +41,8 @@ router.post("/", async (req, res) => {
         baileys:req.body.baileys,
         vodka:req.body.vodka,
         whisky:req.body.whisky,
-        tequila:req.body.tequila
+        tequila:req.body.tequila,
+        timestamp:new Date()
     };
     console.log(attendee);
     if (attendee.name == null || attendee.email == null || attendee.attend == null) {
