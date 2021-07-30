@@ -13,6 +13,28 @@
                     <input type="email" v-model="attendee.email" class="form-control" id="email" placeholder="joskapista@gmail.com">
                 </div>
             </div>
+            <h4 class="my-padding-small">Részvétel:</h4>
+            <fieldset class="form-group">
+            <div class="row">
+                <div class="col-sm-10 col-lg-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ChurchRadio" id="ChurchRadioButton"
+                               value="templom" v-model="attendee.attend">
+                        <label class="form-check-label" for="ChurchRadioButton">Csak Szertartás</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ChurchRadio" id="PartyRadioButton"
+                               value="minden" checked v-model="attendee.attend">
+                        <label class="form-check-label" for="PartyRadioButton">Lakodalom és szertartás</label>
+                    </div>
+                     <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ChurchRadio" id="NothingRadioButton"
+                               value="semmi" v-model="attendee.attend">
+                        <label class="form-check-label" for="NothingRadioButton">Nem tudok résztvenni</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
             <div class="align-right col-lg-10 col-sm-12 bottom_padding">
                 <button type="submit" class="btn btn-light">Tovább</button>
             </div>
@@ -60,7 +82,12 @@ export default {
 .my-padding{
     margin-top:5em;
 }
-
+.my-padding-small{
+    margin-top:2em;
+}
+.left_padding{
+    margin-left: 2em;
+}
 .btn{
     border:solid 1px lightgray
 }

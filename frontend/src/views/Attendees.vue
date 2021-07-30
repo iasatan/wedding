@@ -24,8 +24,7 @@
             <th scope="col">Vodka</th>
             <th scope="col">Whisky</th>
             <th scope="col">Tequila</th>
-            <th scope="col">Fehér</th>
-            <th scope="col">Dátum</th>
+            <th scope="col">Regisztráció</th>
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>

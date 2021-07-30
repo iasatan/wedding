@@ -1,5 +1,5 @@
 <template>
-  <div class="container normal_font">
+  <div class="container">
     <div class="row">
       <h1>Helyszínek:</h1>
     </div>

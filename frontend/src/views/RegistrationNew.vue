@@ -8,8 +8,14 @@
                         <BaseRegistrationForm :attendee="attendee" v-on:submitted="nextpage()" />
                     </div>
                     <div v-else-if="registered">
-                        <RegistrationInfo :attendee="attendee" :attendees="attendees"/>
+                        <div v-if="attendee.attend=='minden'">
+                            <RegistrationInfo :attendee="attendee" :attendees="attendees"/>
+                        </div>
+                        <div v-else>
+                            <RegistrationInfoSad :attendee="attendee" />
+                        </div>
                     </div>
+                     
                     <div v-else>
                         <div v-if="canBring">
                             <FamilyRegistrationFrom :attendee="attendee" :attendees="attendees" v-on:submitted="register()"/>
@@ -35,6 +41,8 @@ import BaseRegistrationForm from "../components/BaseRegistrationForm.vue"
 import SingleRegistrationFrom from "../components/SingleRegistrationFrom.vue"
 import FamilyRegistrationFrom from"../components/FamilyRegistrationFrom.vue"
 import RegistrationInfo from "../components/RegistrationInfo.vue"
+import RegistrationInfoSad from "../components/RegistrationInfoSad.vue"
+
 import axios from "axios"
     export default {
         name: "Registration",
@@ -43,7 +51,8 @@ import axios from "axios"
             BaseRegistrationForm,
             SingleRegistrationFrom,
             FamilyRegistrationFrom,
-            RegistrationInfo
+            RegistrationInfo,
+            RegistrationInfoSad
             },
         data() {
             return {
@@ -84,7 +93,15 @@ import axios from "axios"
                 console.log("I was called");
                 console.log(this.attendee);
                 if(this.attendee.name && this.attendee.email){
-                    if(this.attendee.name.toLowerCase().replace(/\s/g, "")==="asd"){
+                    if(this.attendee.attend=='semmi'){
+                        axios.post('/api/attendee', this.attendee).then(async (res) => {
+                            console.log(res.data.id);
+                            alert("Akkor unatkozz meg otthon :(");
+                            return;
+                        });
+                    }
+                    else{
+                        if(this.attendee.name.toLowerCase().replace(/\s/g, "")==="asd"){
                         this.canBring=false;
                     }else{
                         this.canBring=true;
@@ -95,6 +112,8 @@ import axios from "axios"
                     this.firstPage=false;
 
                     this.$forceUpdate();
+                    }
+                    
 
                 }
 

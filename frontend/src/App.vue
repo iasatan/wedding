@@ -18,7 +18,7 @@
         max-width: 100%;
         background: url('/background2.jpg');
         background-size: 100%;
-        background-repeat: repeat;
+        background-attachment: fixed;
     }
 </style>
 <script>

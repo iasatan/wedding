@@ -4,30 +4,10 @@
         <div class="row">
             <h2>{{attendee.name}}</h2>
             <AllergyForm :attendee="attendee" class="my-padding"/>
-            <DrinkForm :attendee="attendee" class="my-padding"/>
+            <DrinkForm :attendee="attendee" class="my-padding" v-show="attendee.attend=='minden'"/>
         </div>
-        <h4 class="my-padding">Részvétel:</h4>
-        <fieldset class="form-group">
-            <div class="row">
-                <div class="col-sm-10 col-lg-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ChurchRadio" id="ChurchRadioButton"
-                               value="templom" v-model="attendee.attend">
-                        <label class="form-check-label" for="ChurchRadioButton">Csak Szertartás</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ChurchRadio" id="PartyRadioButton"
-                               value="minden" checked v-model="attendee.attend">
-                        <label class="form-check-label" for="PartyRadioButton">Lakodalom és szertartás</label>
-                    </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ChurchRadio" id="NothingRadioButton"
-                               value="semmi" v-model="attendee.attend">
-                        <label class="form-check-label" for="NothingRadioButton">Nem tudok résztvenni</label>
-                    </div>
-                </div>
-            </div>
-        </fieldset>
+        
+        
         <div class="row">
             <div class="align-right col-lg-3 col-sm-12 bottom_padding">
                 <button type="submit" class="btn btn-light">Küldés</button>
