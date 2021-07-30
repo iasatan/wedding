@@ -96,7 +96,7 @@ import axios from "axios"
                     if(this.attendee.attend=='semmi'){
                         axios.post('/api/attendee', this.attendee).then(async (res) => {
                             console.log(res.data.id);
-                            alert("Akkor unatkozz meg otthon :(");
+                            this.$forceUpdate();
                             return;
                         });
                     }
