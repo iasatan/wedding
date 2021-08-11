@@ -1,5 +1,6 @@
 const express = require("express");
 const mongodb = require("mongodb");
+const objectId = require('mongodb').ObjectID;
 const router = express.Router();
 const sgMail = require('@sendgrid/mail');
 const msg = {
@@ -68,7 +69,7 @@ router.post("/", async (req, res) => {
 router.post("/delete", async (req, res)=>{
     const attendees=await loadAttendeeCollection();
     let id = req.body.id;
-    let query={_id: new ObjectID(id)};
+    let query={_id: objectId(id)};
     let childQuery={parentId:id};
     let success;
     success=await attendees.deleteOne(query);
