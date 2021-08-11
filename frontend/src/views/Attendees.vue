@@ -25,6 +25,7 @@
             <th scope="col">Whisky</th>
             <th scope="col">Tequila</th>
             <th scope="col">Regisztráció</th>
+            <th scope="col">Törlés</th>
         </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
@@ -96,6 +97,9 @@
                 <td>
                     <span>{{attendee.timestamp}}</span>
                 </td>
+                <td>
+                    <span class="btn btn-danger" :click="delete(attendee._id)">X</span>
+                </td>
             </tr>
         </table>
 
@@ -120,6 +124,14 @@ export default {
             }))
             
         },
+        methods:{
+            delete(id){
+                axios.post("/api/attendee/delete", {"id":id}).then(()=>{
+                    let toast = this.$toasted.show("Törölve");
+                    toast.goAway(3000);
+                }).catch(err=>console.log(err));
+            }
+        }
 }
 </script>
 <style scoped>

@@ -65,6 +65,19 @@ router.post("/", async (req, res) => {
 
 });
 
+router.post("/delete", async (req, res)=>{
+    const attendees=await loadAttendeeCollection();
+    let id = req.body.id;
+    let query={_id: new mongodb.ObjectID(id)};
+    let childQuery={parentId:id};
+    let success;
+    success=await attendees.deleteOne(query);
+    console.log(success);
+    success=await attendees.deleteMany(childQuery);
+    console.log(success);
+    return res.status(202).send({msg: "deleted"});
+});
+
 router.get("/", async (req,res)=>{
     const attendees = await loadAttendeeCollection();
     let attendeeList = await attendees.find().toArray();
