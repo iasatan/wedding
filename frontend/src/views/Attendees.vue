@@ -129,6 +129,7 @@ export default {
                 axios.post("/api/attendee/delete", {"id":id}).then(()=>{
                     let toast = this.$toasted.show("Törölve");
                     toast.goAway(3000);
+                    this.$router.go()
                 }).catch(err=>console.log(err));
             }
         }
