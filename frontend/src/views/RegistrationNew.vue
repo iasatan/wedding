@@ -121,7 +121,8 @@ import axios from "axios"
             },
             async register(){
                 console.log("register method called");
-                axios.post('/api/attendee', this.attendee).then(async (res) => {
+                if(this.attendee.terms){
+                    axios.post('/api/attendee', this.attendee).then(async (res) => {
                     console.log(res.data.id);
                     let parentId = res.data.id;
                     let success = true;
@@ -155,6 +156,8 @@ import axios from "axios"
                             })
                         }
                 }).catch(err => console.log(err));
+                }
+                
 
 
                 }

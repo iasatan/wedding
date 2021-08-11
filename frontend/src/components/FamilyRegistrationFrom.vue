@@ -41,7 +41,7 @@
             <div class="form-group row">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" v-model="attendee.terms" id="termsCheck">
-                    <span>A felhasználási feltételeket elfogadom</span>
+                    <span>A <a href="/img/aszf.pdf" download>felhasználási feltételeket</a> elfogadom</span>
                 </div>
             </div>
             <div class="form-group row">
