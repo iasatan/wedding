@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
 router.post("/delete", async (req, res)=>{
     const attendees=await loadAttendeeCollection();
     let id = req.body.id;
-    let query={_id: new mongodb.ObjectID(id)};
+    let query={_id: new ObjectID(id)};
     let childQuery={parentId:id};
     let success;
     success=await attendees.deleteOne(query);
