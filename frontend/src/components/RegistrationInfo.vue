@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: 'RegistrationInfo',
     props: {
@@ -88,6 +89,49 @@ export default {
             this.attendees[i].allergyText+=".";
 
         }
+
+        let message="Sikeres Regisztráció!\n"+
+            "Kedves "+ this.attendee.name+"!\n"+
+            "Köszönjük a regisztrációt!\n"+
+            "Izgatottan várjuk, hogy találkozzunk az esküvőn ";
+        if(this.attendees&&this.attendees.length>0) {
+            message += "és együtt mulassunk.";
+        }
+        message+="\nAz esküvő dátuma 2021-09-04, várunk sok szeretettel 14:30-tól a Talizmán vendéglő kerthelyiségében.\n";
+        if(this.attendee.attendeeAllergyCount>0){
+            message+="A következő";
+            if(this.attendee.attendeeAllergyCount>1){
+                message+="k";
+            }
+            message+="re igyekszünk figyelni a kedvedért:\n";
+            message+="Nem fogyasztasz"+this.attendee.allergyText;
+        }
+        if(this.attendees && this.attendees.length>0){
+            message+="\n\n\nA következő általad megadott plusz főkkel fogunk számolni:\n";
+            for (let i = 0; i < this.attendees.length; i++) {
+                message+=this.attendees[i].name+"\n";
+                if(this.attendees[i].attendeeAllergyCount>0){
+                    message+="A következő";
+                    if(this.attendees[i].attendeeAllergyCount>1){
+                        message+="k";
+                    }
+                    message+="re igyekszünk figyelni a kedvéért:\n";
+                    message+="Nem fogyaszt"+this.attendees[i].allergyText;
+                }
+                else {
+                    message += "Nincs semmilyen kaja igénye"
+                }
+            }
+        }
+        message+="\n\n Üdvözlettel,";
+        message+="\nPapp Szonja és Sátán Ádám";
+        axios.post('/api/attendee/email',{email:this.attendee.email,msg:message}).then(()=>{
+            let toast = this.$toasted.show("Emailt kiküldtük");
+            toast.goAway(3000);
+        }).catch(()=>{
+            let toast = this.$toasted.show("Email küldés sikertelen, kérlek mentsd el az információkat");
+            toast.goAway(30000);
+        })
     }
 }
 </script>

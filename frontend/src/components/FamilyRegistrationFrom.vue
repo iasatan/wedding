@@ -41,7 +41,7 @@
             <div class="form-group row">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" v-model="attendee.terms" id="termsCheck">
-                    <span>A <a href="/img/aszf.pdf" download>felhasználási feltételeket</a> elfogadom</span>
+                    <span>A <a href="/img/aszf.pdf" download target="_blank">felhasználási feltételeket</a> elfogadom</span>
                 </div>
             </div>
             <div class="form-group row">
@@ -54,7 +54,7 @@
 
          <div class="row">
             <div class="align-right col-lg-3 col-sm-12 bottom_padding">
-                <button type="submit" class="btn btn-light">Küldés</button>
+                <button type="submit" class="btn btn-light" :disabled="sending">Küldés</button>
             </div>
         </div>
         </form>
@@ -69,7 +69,8 @@
         components: {AllergyForm, DrinkForm},
         props: {
             attendee: {required: true},
-            attendees:{required: true}
+            attendees:{required: true},
+            sending:{required:true}
 
         },
         created: function(){

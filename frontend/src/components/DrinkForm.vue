@@ -1,5 +1,5 @@
 <template>
-    <div class="normal_font">
+    <div >
         <div class="row">
         <h4>Alkohol igényfelmérés:</h4>
         

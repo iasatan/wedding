@@ -1,5 +1,5 @@
 <template>
-    <div class="normal_font">
+    <div >
         <div class="row">
         <h4>Ételérzékenység/életmód:</h4>
         <div class="form-group row">

@@ -18,10 +18,10 @@
                      
                     <div v-else>
                         <div v-if="canBring">
-                            <FamilyRegistrationFrom :attendee="attendee" :attendees="attendees" v-on:submitted="register()"/>
+                            <FamilyRegistrationFrom :attendee="attendee" :attendees="attendees" :sending="sending" v-on:submitted="register()"/>
                         </div>
                         <div v-else>
-                             <SingleRegistrationFrom :attendee="attendee" v-on:submitted="register()"/>
+                             <SingleRegistrationFrom :attendee="attendee" :sending="sending" v-on:submitted="register()"/>
                         </div>  
                     </div>
                 </div>
@@ -82,7 +82,8 @@ import axios from "axios"
                 },
                 firstPage:true,
                 canBring:true,
-                registered:false
+                registered:false,
+                sending:false
             }
         },
         created:function(){
@@ -122,6 +123,7 @@ import axios from "axios"
             async register(){
                 console.log("register method called");
                 if(this.attendee.terms){
+                    this.sending=true;
                     axios.post('/api/attendee', this.attendee).then(async (res) => {
                     console.log(res.data.id);
                     let parentId = res.data.id;
@@ -147,15 +149,12 @@ import axios from "axios"
                     if(success){
                             this.registered=true;
                             this.$forceUpdate();
-                            axios.post('/api/attendee/email',{email:this.attendee.email,msg:"Gyere jó lesz"}).then(()=>{
-                                let toast = this.$toasted.show("Emailt kiküldtük");
-                                toast.goAway(3000);
-                            }).catch(()=>{
-                                let toast = this.$toasted.show("Email küldés sikertelen, kérlek mentsd el az információkat");
-                                toast.goAway(30000);
-                            })
+
                         }
-                }).catch(err => console.log(err));
+                }).catch((err) => {
+                    console.log(err)
+                    this.sending=false;
+                });
                 }
                 
 

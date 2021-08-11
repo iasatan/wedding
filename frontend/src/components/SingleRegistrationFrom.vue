@@ -6,11 +6,24 @@
             <AllergyForm :attendee="attendee" class="my-padding"/>
             <DrinkForm :attendee="attendee" class="my-padding" v-show="attendee.attend=='minden'"/>
         </div>
-        
+        <div class="my-padding">
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.terms" id="termsCheck">
+                    <span>A <a href="/img/aszf.pdf" download target="_blank">felhasználási feltételeket</a> elfogadom</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" v-model="attendee.mail" id="mailCheck">
+                    <span>Feliratkozom a hírlevelekre</span>
+                </div>
+            </div>
+        </div>
         
         <div class="row">
             <div class="align-right col-lg-3 col-sm-12 bottom_padding">
-                <button type="submit" class="btn btn-light">Küldés</button>
+                <button type="submit" class="btn btn-light" :disabled="sending">Küldés</button>
             </div>
         </div>
         </form>
@@ -25,7 +38,8 @@ import DrinkForm from "./DrinkForm"
         name: "SingleRegistrationFrom",
         components: {AllergyForm, DrinkForm},
         props: {
-            attendee: {required: true}
+            attendee: {required: true},
+            sending:{required:true}
 
         },
         methods: {
