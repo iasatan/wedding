@@ -86,7 +86,7 @@ router.get("/", async (req,res)=>{
 router.get("/mock", async (req,res)=>{
     let attendeeList =[];
     let attendee ={
-        id:0,
+        _id:123154865,
         name:"Teszt János",
         email:"asd@asd.hu",
         age:23,

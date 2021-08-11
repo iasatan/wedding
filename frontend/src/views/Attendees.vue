@@ -98,7 +98,7 @@
                     <span>{{attendee.timestamp}}</span>
                 </td>
                 <td>
-                    <span class="btn btn-danger" :click="delete(attendee._id)">X</span>
+                    <button class="btn btn-danger" v-on:click="deleteUser(attendee._id)">X</button>
                 </td>
             </tr>
         </table>
@@ -116,7 +116,7 @@ export default {
             }
         },
         created: async function(){
-            axios.get("/api/attendee").then((result)=>{
+            axios.get("/api/attendee/mock").then((result)=>{
                 this.attendees=result.data;
                 
             }).catch((err=>{
@@ -125,7 +125,7 @@ export default {
             
         },
         methods:{
-            delete(id){
+            deleteUser(id){
                 axios.post("/api/attendee/delete", {"id":id}).then(()=>{
                     let toast = this.$toasted.show("Törölve");
                     toast.goAway(3000);
