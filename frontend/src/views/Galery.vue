@@ -72,7 +72,7 @@ export default {
             {
                 src: '/img/galleryPic2.jpg',
                 thumbnail: '/img/galleryPic2.jpg',
-                caption: 'Első közös éradás',
+                caption: 'Első közös véradás',
                 id: '8'
             },
             {
@@ -90,7 +90,7 @@ export default {
             {
                 src: '/img/galleryPic5.jpg',
                 thumbnail: '/img/galleryPic5.jpg',
-                caption: 'Első hajvágás',
+                caption: 'Első karantén hajvágás',
                 id: '11'
             },
             {
@@ -110,14 +110,7 @@ export default {
                 thumbnail: '/img/galleryPic8.jpg',
                 caption: 'Nekem a Balaton a...',
                 id: '14'
-            },
-
-        {
-          src: '/img/szonjaIskola.jpg',
-          thumbnail: '/img/szonjaIskola.jpg',
-          caption: 'Szo',
-          id: '2'
-        },
+            }
       ],
         currentId: null
 
