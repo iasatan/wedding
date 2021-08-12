@@ -12,6 +12,7 @@ Vue.config.productionTip = false;
 Vue.use(NavbarPlugin)
 Vue.use(Toasted)
 
+
 new Vue({
     router,
     store,
