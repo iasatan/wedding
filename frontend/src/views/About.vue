@@ -46,6 +46,10 @@
       </div>
     </div>
     <br><br>
+
+    <div class="row text-center">
+      <div class="col dress-color"><h4>Menyecske ruha színe:</h4></div>
+    </div>
   </div>
 </template>
 <script>
@@ -54,6 +58,10 @@ export default {
 }
 </script>
 <style scoped>
+.dress-color{
+  background-color: #e5b4bd;
+  height:6em;
+}
 .timeline{
   width:70%;
   @media (max-width: 1081px){

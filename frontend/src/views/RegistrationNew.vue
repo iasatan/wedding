@@ -103,7 +103,8 @@ import axios from "axios"
                         });
                     }
                     else{
-                        if(this.attendee.name.toLowerCase().replace(/\s/g, "")==="asd"){
+                        let name = this.attendee.name.toLowerCase().replace(/\s/g, "")
+                        if(name==="nagyeszter"|| name==="balázslea"||name==="kababikbianka"||name==="kecskéskarina"||name==="szegeczkinóra"||name==="takácsanna"){
                         this.canBring=false;
                     }else{
                         this.canBring=true;
