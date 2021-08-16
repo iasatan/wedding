@@ -36,7 +36,7 @@
             </div>
         </fieldset>
             <div class="align-right col-lg-10 col-sm-12 bottom_padding">
-                <button type="submit" class="btn btn-light">Tovább</button>
+                <button type="submit" class="btn btn-light">További adatok megadása</button>
             </div>
 
         </form>

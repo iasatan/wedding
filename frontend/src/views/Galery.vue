@@ -108,7 +108,7 @@ export default {
             {
                 src: '/img/galleryPic8.jpg',
                 thumbnail: '/img/galleryPic8.jpg',
-                caption: 'Nekem a Balaton a...',
+                caption: 'Nekem a Balaton...',
                 id: '14'
             }
       ],

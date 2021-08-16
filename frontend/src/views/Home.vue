@@ -5,9 +5,9 @@
       <div class="container-fluid">
         <h1>Köszöntünk az esküvői weboldalunkon!</h1>
         <br>
-        <h3><q>-<i>Pont jókor jössz, mert ez a nap legjobb része.</i></q></h3>
-        <h3><q>-<i>Melyik az a rész? </i></q></h3>
-        <h3><q>-<i>Az, amikor te meg én mi leszünk.</i></q></h3>
+        <h3><q><i>-Pont jókor jössz, mert ez a nap legjobb része.<br>
+        -Melyik az a rész?<br>
+        -Az, amikor te meg én mi leszünk.</i></q></h3>
         <br>
         <h3>Itt találhatók meg az esküvővel kapcsolatos információk, visszajelezhető az esemény, valamint a jövőben feltöltjük az esküvőn készült képeket. Addig is reméljük, hasonlóan izgatottan várod a napot, mint mi :)</h3>
       </div>

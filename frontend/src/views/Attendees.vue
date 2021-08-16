@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <table class="table table-hower table-bordered">
+    <table class="table table-bordered">
+        <thead>
         <tr>
             <th scope="col">+1 Fő</th>
             <th scope="col">Név</th>
@@ -27,6 +28,8 @@
             <th scope="col">Regisztráció</th>
             <th scope="col">Törlés</th>
         </tr>
+        </thead>
+        <tbody>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
                     <span v-if="attendee.parentId && attendee.parentId.length>0">+1 Fő</span>
@@ -100,8 +103,81 @@
                 <td>
                     <button class="btn btn-danger" v-on:click="deleteUser(attendee._id)">X</button>
                 </td>
-            </tr>
-        </table>
+        </tr>
+        <tr>
+            <td>
+                </td>
+                <td>
+                    Teljes:{{attendeeCount}}<br>
+                    Gyerek:{{childCount}}
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                </td>
+                <td>
+                    {{glutenCount}}
+                </td>
+                <td>
+                    {{lactoseCount}}
+                </td>
+                <td>
+                    {{milkCount}}
+                </td>
+                <td>
+                    {{veganCount}}
+                </td>
+                <td>
+                    {{otherCount}}
+                </td>
+                <td>
+                    Minden:{{attendAllCount}}<br>
+                    Szertartás:{{attendCeremonyCount}}
+                </td>
+                <td>
+                    {{borCount}}
+                </td>
+                <td>
+                    {{szarazCount}}
+                </td>
+                <td>
+                    {{edesCount}}
+                </td>
+                <td>
+                    {{rozeCount}}
+                </td>
+                <td>
+                    {{vorosCount}}
+                </td>
+                <td>
+                    {{feherCount}}
+                </td>
+                <td>
+                    {{palinkaCount}}
+                </td>
+                <td>
+                    {{jagerCount}}
+                </td>
+                <td>
+                    {{baileysCount}}
+                </td>
+                <td>
+                    {{vodkaCount}}
+                </td>
+                <td>
+                    {{whiskyCount}}
+                </td>
+                <td>
+                    {{tequilaCount}}
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+        </tr>
+        </tbody>
+    </table>
 
   </div>
 </template>
@@ -113,11 +189,98 @@ export default {
     data() {
             return {
                 attendees:[],
+                attendeeCount:0,
+                childCount:0,
+                glutenCount:0,
+                lactoseCount:0,
+                milkCount: 0,
+                veganCount: 0,
+                otherCount: 0,
+                attendAllCount: 0,
+                attendCeremonyCount:0,
+                borCount: 0,
+                szarazCount: 0,
+                edesCount: 0,
+                rozeCount: 0,
+                vorosCount: 0,
+                feherCount: 0,
+                palinkaCount: 0,
+                jagerCount: 0,
+                baileysCount: 0,
+                vodkaCount: 0,
+                whiskyCount: 0,
+                tequilaCount: 0
             }
         },
         created: async function(){
             axios.get("/api/attendee").then((result)=>{
                 this.attendees=result.data;
+                
+               this.attendees.forEach(attendee => {
+                    if(attendee.attend!=="semmi"){
+                        this.attendeeCount++;
+                    }
+                    if(attendee.age<18){
+                        this.childCount++;
+                    }
+                    if(attendee.gluten){
+                        this.glutenCount++;
+                    }
+                    if(attendee.milk){
+                        this.milkCount++;
+                    }
+                    if(attendee.lactose){
+                        this.lactoseCount++;
+                    }
+                    if(attendee.vegan){
+                        this.veganCount++;
+                    }
+                    if(attendee.other){
+                        this.otherCount++;
+                    }
+                    if(attendee.attend==="minden"){
+                        this.attendAllCount++;
+                    }
+                    if(attendee.attend==="templom"){
+                        this.attendCeremonyCount++;
+                    }
+                    if(attendee.bor){
+                        this.borCount++;
+                    }
+                    if(attendee.szaraz){
+                        this.szarazCount++;
+                    }
+                    if(attendee.edes){
+                        this.edesCount++;
+                    }
+                    if(attendee.roze){
+                        this.rozeCount++;
+                    }
+                    if(attendee.voros){
+                        this.vorosCount++;
+                    }
+                    if(attendee.feher){
+                        this.feherCount++;
+                    }
+                    if(attendee.palinka){
+                        this.palinkaCount++;
+                    }
+                    if(attendee.jager){
+                        this.jagerCount++;
+                    }
+                    if(attendee.baileys){
+                        this.baileysCount++;
+                    }
+                    if(attendee.vodka){
+                        this.vodkaCount++;
+                    }
+                    if(attendee.whisky){
+                        this.whiskyCount++;
+                    }
+                    if(attendee.tequila){
+                        this.tequilaCount++
+                    }
+                });
                 
             }).catch((err=>{
                 console.log(err);
@@ -138,13 +301,6 @@ export default {
 <style scoped>
 .container{
   padding-top:4em;
-}
-img{
-  max-height: 90vh;
-  width: 100%;
-  top: -30px;
-  position: relative;
-
 }
 .container-fluid{
   max-width: 100%;
