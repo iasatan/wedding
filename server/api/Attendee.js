@@ -7,9 +7,9 @@ const msg = {
     subject: 'Papp Szonja és Sátán Ádám Esküvője',
     text: 'Gyere, jó lesz, 2021-09-04 15:00'
   }
-  const msg2 = {
+const msg2 = {
     from: 'satanadam@outlook.com', // Change to your verified sender
-    to="szony97@gmail.com"
+    to:'szony97@gmail.com'
   }
 
 router.post('/email', async (req,res)=>{
