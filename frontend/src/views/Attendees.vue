@@ -105,6 +105,32 @@
                 </td>
         </tr>
         <tr>
+            <td></td>
+            <td>Név</td>
+            <td>Kor</td>
+            <td>Email</td>
+            <td>Glutén</td>
+            <td>Laktóz</td>
+            <td>Tej</td>
+            <td>Vegán</td>
+            <td>Egyéb</td>
+            <td>Részvétel</td>
+            <td>Bor</td>
+            <td>Száraz</td>
+            <td>Édes</td>
+            <td>Rozé</td>
+            <td>Vörös</td>
+            <td>Fehér</td>
+            <td>Pálinka</td>
+            <td>Jager</td>
+            <td>Baileys</td>
+            <td>Vodka</td>
+            <td>Whisky</td>
+            <td>Tequila</td>
+            <td>Regisztráció</td>
+            <td>Törlés</td>
+        </tr>
+        <tr>
             <td>
                 </td>
                 <td>
@@ -176,6 +202,7 @@
                 <td>
                 </td>
         </tr>
+
         </tbody>
     </table>
 
