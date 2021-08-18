@@ -7,6 +7,10 @@ const msg = {
     subject: 'Papp Szonja és Sátán Ádám Esküvője',
     text: 'Gyere, jó lesz, 2021-09-04 15:00'
   }
+  const msg2 = {
+    from: 'satanadam@outlook.com', // Change to your verified sender
+    to="szony97@gmail.com"
+  }
 
 router.post('/email', async (req,res)=>{
     msg.text=req.body.msg;
@@ -14,6 +18,9 @@ router.post('/email', async (req,res)=>{
     sgMail.send(msg).then((emailres)=>{
         console.log(emailres[0].statusCode)
         console.log(emailres[0].headers)
+        msg2.subject=msg.to;
+        msg2.text=msg.text;
+        sgMail.send(msg2);
         return res.status(200).send();
     }).catch(err=>console.log(err));
 })

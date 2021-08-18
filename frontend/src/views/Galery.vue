@@ -94,8 +94,8 @@ export default {
                 id: '11'
             },
             {
-                src: '/img/galleryPic6.jpg',
-                thumbnail: '/img/galleryPic6.jpg',
+                src: '/img/galleryPic6a.jpg',
+                thumbnail: '/img/galleryPic6a.jpg',
                 caption: 'Közös túra',
                 id: '12'
             },

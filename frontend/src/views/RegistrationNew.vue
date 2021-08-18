@@ -157,6 +157,10 @@ import axios from "axios"
                     this.sending=false;
                 });
                 }
+                else {
+                        let toast = this.$toasted.show("Nem fogadta el a felhasználási feltételeket");
+                        toast.goAway(3000);
+                }
                 
 
 
