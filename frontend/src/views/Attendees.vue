@@ -30,6 +30,78 @@
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Teljes:{{attendeeCount}}<br>
+                Gyerek:{{childCount}}
+            </td>
+            <td>
+
+            </td>
+            <td>
+            </td>
+            <td>
+                {{glutenCount}}
+            </td>
+            <td>
+                {{lactoseCount}}
+            </td>
+            <td>
+                {{milkCount}}
+            </td>
+            <td>
+                {{veganCount}}
+            </td>
+            <td>
+                {{otherCount}}
+            </td>
+            <td>
+                Minden:{{attendAllCount}}<br>
+                Szertartás:{{attendCeremonyCount}}
+            </td>
+            <td>
+                {{borCount}}
+            </td>
+            <td>
+                {{szarazCount}}
+            </td>
+            <td>
+                {{edesCount}}
+            </td>
+            <td>
+                {{rozeCount}}
+            </td>
+            <td>
+                {{vorosCount}}
+            </td>
+            <td>
+                {{feherCount}}
+            </td>
+            <td>
+                {{palinkaCount}}
+            </td>
+            <td>
+                {{jagerCount}}
+            </td>
+            <td>
+                {{baileysCount}}
+            </td>
+            <td>
+                {{vodkaCount}}
+            </td>
+            <td>
+                {{whiskyCount}}
+            </td>
+            <td>
+                {{tequilaCount}}
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
         <tr v-for="(attendee,k) in attendees" :key="k">
                 <td>
                     <span v-if="attendee.parentId && attendee.parentId.length>0">+1 Fő</span>
@@ -130,78 +202,7 @@
             <td>Regisztráció</td>
             <td>Törlés</td>
         </tr>
-        <tr>
-            <td>
-                </td>
-                <td>
-                    Teljes:{{attendeeCount}}<br>
-                    Gyerek:{{childCount}}
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                </td>
-                <td>
-                    {{glutenCount}}
-                </td>
-                <td>
-                    {{lactoseCount}}
-                </td>
-                <td>
-                    {{milkCount}}
-                </td>
-                <td>
-                    {{veganCount}}
-                </td>
-                <td>
-                    {{otherCount}}
-                </td>
-                <td>
-                    Minden:{{attendAllCount}}<br>
-                    Szertartás:{{attendCeremonyCount}}
-                </td>
-                <td>
-                    {{borCount}}
-                </td>
-                <td>
-                    {{szarazCount}}
-                </td>
-                <td>
-                    {{edesCount}}
-                </td>
-                <td>
-                    {{rozeCount}}
-                </td>
-                <td>
-                    {{vorosCount}}
-                </td>
-                <td>
-                    {{feherCount}}
-                </td>
-                <td>
-                    {{palinkaCount}}
-                </td>
-                <td>
-                    {{jagerCount}}
-                </td>
-                <td>
-                    {{baileysCount}}
-                </td>
-                <td>
-                    {{vodkaCount}}
-                </td>
-                <td>
-                    {{whiskyCount}}
-                </td>
-                <td>
-                    {{tequilaCount}}
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-        </tr>
+
 
         </tbody>
     </table>

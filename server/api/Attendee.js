@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
         });
     }
     else{
-        return res.status(200).send({"id":012});
+        return res.status(200).send({"id":12});
     }
     
 
@@ -90,6 +90,7 @@ router.post("/delete", async (req, res)=>{
 router.get("/", async (req,res)=>{
     const attendees = await loadAttendeeCollection();
     let attendeeList = await attendees.find().toArray();
+    attendeeList =attendeeList.reverse();
     return res.send(attendeeList);
 })
 router.get("/mock", async (req,res)=>{
