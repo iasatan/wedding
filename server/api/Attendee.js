@@ -90,7 +90,7 @@ router.post("/delete", async (req, res)=>{
 router.get("/", async (req,res)=>{
     const attendees = await loadAttendeeCollection();
     let attendeeList = await attendees.find().toArray();
-    attendeeList =attendeeList.reverse();
+    attendeeList =attendeeList.sort(sortFunction);
     return res.send(attendeeList);
 })
 router.get("/mock", async (req,res)=>{
@@ -113,7 +113,11 @@ router.get("/mock", async (req,res)=>{
     console.log("sent attendee mocks");
     return res.send(attendeeList);
 })
-
+function sortFunction(a,b){
+    var dateA = new Date(a.timestamp).getTime();
+    var dateB = new Date(b.timestamp).getTime();
+    return dateA > dateB ? -1 : 1;
+};
 async function loadAttendeeCollection() {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", {useNewUrlParser: true});
