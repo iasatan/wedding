@@ -98,7 +98,7 @@ router.post("/delete", async (req, res)=>{
 router.get("/", async (req,res)=>{
     const attendees = await loadAttendeeCollection();
     console.log("attendees table connected")
-    let attendeeList = await attendees.find().limit(10).toArray();
+    let attendeeList = await attendees.find().toArray();
     console.log("number or people:"+ attendeeList.length);
     attendeeList =attendeeList.reverse();
     return res.send(attendeeList);
@@ -130,7 +130,7 @@ function sortFunction(a,b){
 };
 async function loadAttendeeCollection() {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", 
+    const client = await mongodb.MongoClient.connect("mongodb+srv://wedding2:wedding2@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", 
     {useNewUrlParser: true, serverSelectionTimeoutMS:100000, useUnifiedTopology: true, connectTimeoutMS: 100000, socketTimeoutMS: 100000,});
     return client.db("wedding").collection("attendees");
 }
