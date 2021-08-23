@@ -97,9 +97,7 @@ router.post("/delete", async (req, res)=>{
 
 router.get("/", async (req,res)=>{
     const attendees = await loadAttendeeCollection();
-    console.log("attendees table connected")
     let attendeeList = await attendees.find().toArray();
-    console.log("number or people:"+ attendeeList.length);
     attendeeList =attendeeList.reverse();
     return res.send(attendeeList);
 })

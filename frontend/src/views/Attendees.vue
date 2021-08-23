@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+      <a :href="mailto">Körlevél</a>
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -216,6 +217,7 @@ export default {
   name: 'Attendees',
     data() {
             return {
+                mailto:"mailto:satanadam@outlook.com?cc=szony97@gmail.com",
                 attendees:[],
                 attendeeCount:0,
                 childCount:0,
@@ -241,12 +243,17 @@ export default {
             }
         },
         created: async function(){
+
             axios.get("/api/attendee").then((result)=>{
                 this.attendees=result.data;
+                console.log(result.data);
                 
                this.attendees.forEach(attendee => {
                     if(attendee.attend!=="semmi"){
                         this.attendeeCount++;
+                    }
+                    if(attendee.email){
+                        this.mailto+=", "+attendee.email;
                     }
                     if(attendee.age<18){
                         this.childCount++;
@@ -309,7 +316,7 @@ export default {
                         this.tequilaCount++
                     }
                 });
-                
+                this.mailto+="&subject=Papp Szonja és Sátán Ádám Esküvője hírlevél";
             }).catch((err=>{
                 console.log(err);
             }))
