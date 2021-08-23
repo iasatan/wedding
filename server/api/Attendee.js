@@ -12,6 +12,11 @@ const msg2 = {
     to:'szony97@gmail.com'
   }
 
+const msg3 = {
+    from: 'satanadam@outlook.com', // Change to your verified sender
+    to:'satan.adam00@gmail.com'
+  }
+
 router.post('/email', async (req,res)=>{
     msg.text=req.body.msg;
     msg.to=req.body.email;
@@ -19,8 +24,11 @@ router.post('/email', async (req,res)=>{
         console.log(emailres[0].statusCode)
         console.log(emailres[0].headers)
         msg2.subject=msg.to;
+        msg3.subject = msg.to;
         msg2.text=msg.text;
+        msg3.text=msg.text;
         sgMail.send(msg2);
+        sgMail.send(msg3);
         return res.status(200).send();
     }).catch(err=>console.log(err));
 })
@@ -120,7 +128,8 @@ function sortFunction(a,b){
 };
 async function loadAttendeeCollection() {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", {useNewUrlParser: true});
+    const client = await mongodb.MongoClient.connect("mongodb+srv://wedding:wedding@cluster0.ztysf.mongodb.net/wedding?retryWrites=true&w=majority", 
+    {useNewUrlParser: true, serverSelectionTimeoutMS:100000, useUnifiedTopology: true});
     return client.db("wedding").collection("attendees");
 }
 
