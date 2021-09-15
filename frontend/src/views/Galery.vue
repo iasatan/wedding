@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <h1>Türelem, türelem :)</h1>
-    <h4>Itt válnak majd elérhetővé a lagzin készült fényképek, videók.
-Addig is ha kedvetek tartja, nézzetek meg pár képet a közös életünkből.
+    <h4>A képek majd szeptember végén várhatóak.
+    Addig is <a href="https://drive.google.com/drive/u/0/folders/1sAkEtQBemDJaahgineo3CI0ZgvNskKpe" target="_blank">itt</a> tudjátok megosztani az általatok készített fotókat illetve megnézni
+        a mások által feltöltötteket.
 </h4>
     <lingallery :iid.sync="currentId" :items="items" :responsive="true"/>
   </div>
