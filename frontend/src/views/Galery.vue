@@ -5,14 +5,18 @@
             Addig is <a href="https://drive.google.com/drive/u/0/folders/1sAkEtQBemDJaahgineo3CI0ZgvNskKpe"
                         target="_blank">itt</a> tudjátok megosztani az általatok készített fotókat illetve megnézni
             a mások által feltöltötteket.
-            <br>
 
+
+        </h4>
+        <br>
+        <div class="iframe-wrapper">
             <iframe width="1120" height="630"
                     src="https://www.youtube.com/embed/videoseries?list=PLgbSLqBWfB-XcOO2Skklbc_k5_Qm_am5r"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-        </h4>
+        </div>
+
         <lingallery :iid.sync="currentId" :items="items" :responsive="true"/>
     </div>
 </template>
@@ -130,6 +134,21 @@
 </script>
 
 <style scoped>
+    .iframe-wrapper {
+        position: relative;
+        height: 0;
+        padding-top: 56.25%;
+        overflow: hidden;
+    }
+
+    .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     .container {
         padding-top: 3em;
     }
