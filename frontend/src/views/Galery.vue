@@ -16,6 +16,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </div>
+        <br>
 
         <lingallery :iid.sync="currentId" :items="items" :responsive="true"/>
     </div>
